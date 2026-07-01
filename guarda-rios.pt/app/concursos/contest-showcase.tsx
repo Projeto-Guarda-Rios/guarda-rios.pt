@@ -136,16 +136,6 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
     <div
       className="contest-showcase"
       ref={rootRef}
-      onPointerEnter={(event) => {
-        if (event.pointerType === "mouse") hoveringRef.current = true;
-      }}
-      onPointerLeave={(event) => {
-        if (event.pointerType === "mouse") {
-          hoveringRef.current = false;
-          // Give a grace period after the pointer leaves before resuming.
-          registerInteraction();
-        }
-      }}
       onPointerDownCapture={registerInteraction}
       onWheelCapture={registerInteraction}
       onTouchStartCapture={registerInteraction}
@@ -206,6 +196,16 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
           className="contest-photo-scroll"
           ref={galleryRef}
           aria-label={`Fotografias de ${selected.name}`}
+          onPointerEnter={(event) => {
+            if (event.pointerType === "mouse") hoveringRef.current = true;
+          }}
+          onPointerLeave={(event) => {
+            if (event.pointerType === "mouse") {
+              hoveringRef.current = false;
+              // Give a grace period after the pointer leaves before resuming.
+              registerInteraction();
+            }
+          }}
         >
           {photos.length > 0 ? (
             photos.map((photo, index) => (
