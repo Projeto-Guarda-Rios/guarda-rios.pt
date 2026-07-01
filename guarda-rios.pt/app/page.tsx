@@ -1,202 +1,320 @@
-import { JetBrains_Mono } from "next/font/google";
-import Terminal from "@/content/Terminal";
-import { MoveRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import EventSection from "@/content/scrollimages_events";
+import {
+  Eyebrow,
+  Button,
+  PhotoFrame,
+  SectionHeading,
+  StatBand,
+  Gauge,
+  MiniAreaChart,
+  ChartAxis,
+  Card,
+  LiveTag,
+  CTASection,
+  ArrowRight,
+} from "@/content/ui";
+import { LINKS } from "@/content/site-config";
 
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-});
-
-
-const events =[{
-    name: "Faqtos 25/26",
-    date: "2025/2026",
-    image: "/globe.svg"
+/** Cards that lead visitors into each section of the site. */
+const ENTRIES = [
+  {
+    href: "/ribalab",
+    kicker: "01 · Ribalab",
+    title: "O nosso hackerspace",
+    teaser:
+      "O espaço maker do Grupo Ribadouro onde os alunos desenham e constroem cada estação.",
+    photo: undefined,
+    caption: "Ribalab",
   },
   {
-    name: "Ifest²",
-    date: "2025",
-    image: "/globe.svg"
+    href: "/estacao",
+    kicker: "02 · Estação",
+    title: "Tecnologia aberta",
+    teaser:
+      "Solar, modular e replicável: do sensor submerso à transmissão por rede móvel NB-IoT.",
+    photo: undefined,
+    caption: "estação no terreno",
   },
   {
-    name: "Mostra nacional da Juventude dos jovens cientistas",
-    date: "2024/2025",
-    image: "/globe.svg"
+    href: "/divulgacao",
+    kicker: "03 · Divulgação",
+    title: "Levamos os rios ao público",
+    teaser:
+      "GreenFest, hackathons e encontros onde partilhamos o projeto com a comunidade.",
+    photo: "/divulgacao/greenfest-2025/greenfest-1.jpg",
+    caption: "GreenFest 2025",
   },
   {
-    name: "Atlantico Junior",
-    date: "2023/2024",
-    image: "/globe.svg"
-  }
-]
-
-
-
-
-
+    href: "/concursos",
+    kicker: "04 · Concursos",
+    title: "Concurso Guarda-Rios",
+    teaser:
+      "O desafio STEM que lançámos às escolas — e as distinções que o projeto já conquistou.",
+    photo: "/concursos/atlantico-junior-2023/aj-1.jpg",
+    caption: "Atlântico Júnior",
+  },
+  {
+    href: "/parcerias",
+    kicker: "05 · Parcerias",
+    title: "Quem caminha connosco",
+    teaser:
+      "Instituições que apoiam e orientam o projeto, da engenharia à gestão da água.",
+    photo: undefined,
+    caption: "parcerias",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center">
-        <div className="mt-8 w-full px-2 md:w-200">
-          <h2 className={`${mono.className} text-4xl mb-6`}>
-            <strong>Missão do projeto</strong>
-          </h2>
-          <section className="flex flex-col md:flex-row gap-3">
-            <Image src="/guarda_rios_logo1.png" alt="Guarda-Rios Logo" width={400} height={100} />
-            <h3 className="w-92 px-2 md:w-100 md:px-0 text-base leading-8">
-              O projeto Guarda-Rios tem como objetivo desenvolver estações de medição da qualidade da água dos cursos de água doce do País.
-              Com as nossas estações <i>low-cost</i> e energeticamente independentes, somos capazes de obter dados por todo o país e disponibilizar a informação ao público.
-              Desta forma, conseguimos permitir que qualquer pessoa possa ajudar a proteger os rios, pois qualquer pessoa pode replicar as nossas estações.
-              Permitindo que todos possam participar na proteção dos rios.
-            </h3>
-          </section>
-        </div>
-        
-        <section className="min-w-full flex justify-center bg-(--background-top-whitemode) mt-6 dark:bg-(--background-top)">
-          <div className="border border-t-0 border-l-2 border-b-0 border-(--background-whitemode) p-3 pl-6 pr-6 dark:border-(--background)">
-            <h2 className={`${mono.className} text-(--green2) text-2xl`}><strong>100%</strong></h2>
-            <span className="">open-source</span>
-          </div>
-          <div className="border border-t-0 border-b-0 border-(--background-whitemode) p-3 pl-6 pr-6 dark:border-(--background)">
-            <h2 className={`${mono.className} text-(--green2) text-2xl`}><strong>24/7</strong></h2>
-            <span className="">Monitorização das águas</span>
-          </div>
-          <div className="border border-t-0 border-r-2 border-b-0 border-(--background-whitemode) p-3 dark:border-(--background)">
-            <h2 className={`${mono.className} text-(--green2) text-2xl`}><strong>2</strong></h2>
-            <span className="">Parametros a medir</span>
-          </div>
-        </section>
-
-        <section className={`pt-20 pb-10 w-100 px-2 md:w-200 md:px-0`}>
-            <h1 className={`${mono.className} w-98 mx-2 md:w-200 md:px-0 text-4xl`}> <strong>Monitorização dos Rios de Portugal</strong></h1>
-            <h2 className="mt-3 text-lg w-100 px-2 md:w-200 md:px-0">O projeto Guarda-rios é open-source e tem como objetivo desenvolver estações <i>low-cost</i> para monitorizar os rios portugueses. Com as nossas estações ajudamos o ambiente.</h2>
-            
-            <div className="flex gap-4 px-2 md:px-0">
-              <Link href="https://github.com/" className="flex p-1 mt-7 rounded border border-1 border-(--border2) text-sm items-center gap-1">
-              <MoveRight /> GitHub
-              </Link>
-              <Link href="https://data.guarda-rios.pt" className="flex p-1 mt-7 rounded border border-2 border-(--green)/60 bg-(--green2)/40 items-center gap-1 text-sm">
-              <MoveRight /> Portal de Dados
-              </Link>
+    <>
+      {/* ---------- HERO ---------- */}
+      <section className="hero">
+        <div className="wrap">
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <Eyebrow>Ciência cidadã · Rios de Portugal</Eyebrow>
+              <h1>
+                Projeto
+                <br />
+                <span className="accent">
+                  Guarda-Rios
+                  <svg viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden>
+                    <path
+                      d="M2 7 C60 2 110 11 160 6 C210 1 250 10 298 5"
+                      fill="none"
+                      stroke="var(--orange)"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </h1>
+              <p className="hero-mission">
+                Estações open-source que monitorizam a qualidade da água dos
+                rios de Portugal, em tempo real.
+              </p>
+              <p className="hero-sub">
+                Um projeto de alunos do Grupo Ribadouro, no Porto — ciência
+                aberta ao serviço das nossas ribeiras. Qualquer escola ou
+                comunidade pode montar a sua estação.
+              </p>
+              <div className="hero-ctas">
+                <Button href={LINKS.portal} arrow>
+                  Portal de Dados
+                </Button>
+                <Button href="/sobre" variant="ghost">
+                  A nossa missão
+                </Button>
+              </div>
             </div>
 
-            <Terminal filename="Sobre.md" classname="mt-7 w-92 mx-2 md:w-200 md:mx-0" lines={[
-              {
-                text: "Recolhemos dados sobre a qualidade da água dos rios em tempo real.",
-                highlight: "em tempo real"
-              },
-              {
-                text: "As estações de avaliam parametros de Temperatura e Turbidez da água dos rios.",
-                highlight: "Temperatura e Turbidez"
-              },
-              {
-                text: "O projeto é 100% open-source licenciado pelas licensas MIT e CERN-OHL-P v2.",
-                highlight: "MIT e CERN-OHL-P v2"
-              },
-              {
-                text: "Dados abertos a todo o público para visualização.",
-                highlight: "a todo o público"
+            <div className="hero-figure">
+              <PhotoFrame
+                alt="Fotografia de um rio de Portugal"
+                caption="rio · fotografia"
+                ratio="5/6"
+                duotone
+                sizes="(max-width: 1080px) 100vw, 480px"
+              />
+              <div className="hero-data">
+                <div className="hd-top">
+                  <span className="dot" /> Ao vivo · Estação-piloto
+                </div>
+                <div className="hd-row">
+                  <span className="hd-k">Temperatura</span>
+                  <span className="hd-v tnum">
+                    14,8<span>ºC</span>
+                  </span>
+                </div>
+                <div className="hd-row">
+                  <span className="hd-k">Turbidez</span>
+                  <span className="hd-v tnum">
+                    3<span>NTU</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="wave-divider" aria-hidden style={{ marginTop: 96 }}>
+          <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <path
+              d="M0 40 C240 12 480 60 720 42 C960 24 1200 58 1440 34"
+              fill="none"
+              stroke="var(--blue)"
+              strokeWidth="1"
+              opacity="0.35"
+            />
+            <path
+              d="M0 52 C260 26 520 66 780 48 C1040 30 1240 60 1440 46"
+              fill="none"
+              stroke="var(--blue)"
+              strokeWidth="1"
+              opacity="0.18"
+            />
+          </svg>
+        </div>
+      </section>
+
+      {/* ---------- STATS ---------- */}
+      <StatBand
+        stats={[
+          {
+            value: (
+              <>
+                100<em>%</em>
+              </>
+            ),
+            caption: (
+              <>
+                <strong>Open-source.</strong> Esquemas, código e materiais
+                abertos a todos.
+              </>
+            ),
+          },
+          {
+            value: "24/7",
+            caption: (
+              <>
+                <strong>Monitorização contínua.</strong> Leituras a chegar de
+                dia e de noite.
+              </>
+            ),
+          },
+          {
+            value: "2",
+            caption: (
+              <>
+                <strong>Parâmetros medidos.</strong> Temperatura e turbidez — e
+                a crescer.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      {/* ---------- DADOS EM DIRETO (teaser) ---------- */}
+      <section className="section bg-2">
+        <div className="wrap">
+          <div className="dados-top">
+            <SectionHeading
+              eyebrow="Dados em tempo real"
+              title={
+                <>
+                  A água, <em>em direto.</em>
+                </>
               }
-            ]} /> 
-        </section>
+              lead="Cada estação transmite leituras contínuas para um portal público e aberto. Estes são exemplos do que vai encontrar."
+            />
+            <LiveTag>A transmitir agora</LiveTag>
+          </div>
 
-        <div className="mt-6">
-          <h2 className={`${mono.className} text-4xl mb-6 w-92 mx-2 md:w-200 md:mx-0`}>
-            <strong>Porque os rios?</strong>
-          </h2>
-          <section className="flex flex-col w-92 mx-2 md:flex-row md:w-200 md:mx-0 gap-10 items-center">
-            <div> 
-              <h3 className="w-92 md:w-95 text-base leading-8">
-              A água é um dos bens naturais mais essenciais, mesmo assim os cursos de água estão cada vez mais a serem alvos da poluição.
-              Com descargas ilegais, contaminações e outros acontecimentos recorrentes, os rios adquerem uma elevada quantidade de poluentes e ficam contaminados, 
-              impedindo o consumo e destruindo a biodiversidade.
-              </h3>
-              <h3 className="w-92 md:w-95 text-base leading-8">
-                Com isto, nós medimos parametros como a Turbidez e o pH que são essenciais para a avaliação da poluição dos rios.
-              </h3>
-            </div>
-            <Terminal filename="parametros.sh" classname="w-92 mx-2 sm:mx-0 md:w-100" height="h-75" text_size="text-xl" text_color="text-(--text2)" lines={[
-                {text: "Parâmetros: "},
-                {text: "Temperatura: 25ºC,", highlight: "Temperatura"},
-                {text: "Turbidez: 3 NTU", highlight: "Turbidez:"},
-            ]} />
-          </section>
+          <div className="dados-grid">
+            <Card title="Temperatura">
+              <Gauge
+                value={14.8}
+                max={40}
+                unit="ºC"
+                sublabel="Fresco · escala 0–40 ºC"
+                color="var(--orange)"
+                display="14,8"
+              />
+            </Card>
+
+            <Card title="Turbidez">
+              <Gauge
+                value={3}
+                max={20}
+                unit="NTU"
+                sublabel="Água limpa · escala 0–20 NTU"
+                color="var(--blue)"
+              />
+            </Card>
+
+            <Card
+              className="chart-card"
+              title="Temperatura · últimas 24 h"
+              action={<LiveTag />}
+            >
+              <MiniAreaChart />
+              <ChartAxis labels={["00h", "06h", "12h", "18h", "agora"]} />
+            </Card>
+          </div>
+
+          <div className="dados-foot">
+            <a
+              className="link-arrow"
+              href={LINKS.portal}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Explorar todas as estações no Portal de Dados
+              <ArrowRight width={16} height={16} />
+            </a>
+          </div>
         </div>
-        <section className="w-92 mx-2 md:w-200 md:mx-0 mb-20">
-          <h3 className={`${mono.className} text-xs mt-8 font-bold text-(--green2)`}><Link href="/sobre">Saber mais +</Link></h3>
-        </section>
+      </section>
 
+      {/* ---------- SECTION ENTRIES ---------- */}
+      <section className="section">
+        <div className="wrap">
+          <SectionHeading
+            eyebrow="Explorar o projeto"
+            title={
+              <>
+                Por onde <em>começar</em>
+              </>
+            }
+            lead="Do espaço onde nascem as estações às competições que nos desafiam — percorre cada parte do Guarda-Rios."
+          />
 
-        <section className="flex flex-col items-center mb-21">
-          <div>
-            <h1 className={`${mono.className} text-4xl w-92 mx-2 md:w-200 md:mx-0 mb-8`}><strong>Parâmetros medidos</strong></h1>
+          <div className="entry-grid">
+            {ENTRIES.map((entry) => (
+              <Link key={entry.href} href={entry.href} className="entry-card">
+                <PhotoFrame
+                  src={entry.photo}
+                  alt={entry.caption}
+                  caption={entry.caption}
+                  ratio="16/10"
+                  sizes="(max-width: 720px) 100vw, (max-width: 1080px) 50vw, 380px"
+                />
+                <div className="entry-body">
+                  <span className="kicker">{entry.kicker}</span>
+                  <h3>{entry.title}</h3>
+                  <p>{entry.teaser}</p>
+                  <span className="link-arrow">
+                    Ver mais
+                    <ArrowRight width={16} height={16} />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <section className="flex flex-col gap-10 mb-5 w-92 mx-2 md:w-200 md:mx-0 md:flex-row">
-            <div className="flex border border-(--border-whitemode)/90 bg-(--background-top-whitemode) border-3 rounded rounded-lg p-5 w-92 md:w-95 shadow-xl shadow-(--border-whitemode)/10 dark:bg-(--background-top) dark:border-(--green2)/80 dark:shadow-green-500/10">
-              <article className="flex flex-col">
-                  <h1 className={`${mono.className} text-3xl mb-2`}><strong>Temperatura</strong></h1>
-                  <h3 className="text-sm leading-6">
-                      Este é um fator importante para verificar a capacidade da água de conter os gases, como oxigénio, essenciais aos seres vivos.
-                      Além disso, os seres vivos poiquilotérmicos estão suscétiveis às variações de Temperatura.
-                  </h3>
-              </article>
-
-            </div>
-
-            <div className="flex border border-(--border-whitemode)/90 bg-(--background-top-whitemode) border-3 rounded rounded-lg p-5 w-92 md:w-95 shadow-xl shadow-(--border-whitemode)/10 dark:bg-(--background-top) dark:border-(--green2)/80 dark:shadow-green-500/10">
-              <article className="flex flex-col">
-                  <h1 className={`${mono.className} text-3xl mb-2`}><strong>Turbidez</strong></h1>
-                  <h3 className="text-sm leading-6">
-                      Este fator influência diretamente a solubilidade da água, afetando os seres vivos que vivem nestas águas. 
-                    Grandes variações deste indicador impacta negativamente os ecossistemas aquáticos, sendo um bom indicador da poluição da água.
-                  </h3>
-              </article>
-
-            </div>
-          </section>
-          <h3 className={`${mono.className} text-xs mt-8 font-bold text-(--green2) w-92 mx-2 md:w-200 md:mx-0`}><Link href="/parametros">Saber mais +</Link></h3>
-        </section>
-
-
-        <section className="w-92 mx-2 md:w-200 md:mx-0 mb-21">
-          <h1 className={`${mono.className} text-4xl w-200`}><strong>Protótipo</strong></h1>
-
-          <div className="mt-8">
-              <article className="flex flex-col gap-4 items-center">
-                <Image src="/Untitled.png" alt="Example_station" width={800} height={600} className="rounded rounded-lg" />
-                <h3>
-                  O nosso protótipo é o elemento chave desta missão. Isto será a parte responsável pela obtenção dos dados no terreno. Aqui será onde a magia acontecerá.
-                  Através dos sistemas que utilizamos e das PCI que desenvolvemos, somos capazes de obter e enviar para os servidores todos os dados que temos e disponibilizarmo-los
-                  para todas as pessoas.
-                </h3>
-              </article>
-          </div>
-          <h3 className={`${mono.className} text-xs mt-8 font-bold text-(--green2)  w-92 mx-2 md:w-200 md:mx-0`}><Link href="/prototipo">Saber mais +</Link></h3>
-        </section>
-        
-
-        <section className=" w-92 mx-2 md:w-200 md:mx-0 mb-21">
-          <h1 className={`${mono.className} text-4xl w-92 md:w-200`}><strong>Concursos Científicos</strong></h1>
-
-          <div className="w-92 md:w-200 flex gap-10 mt-8">
-              <EventSection Event={events} Width="w-92 md:w-200"/>
-          </div>
-        </section>
-
-            
-        <section className="w-92 mx-2 md:w-200 md:mx-0">
-                <h1 className={`${mono.className} text-4xl font-bold mb-10`}>Parcerias</h1>
-                
-                <section className="flex flex-col md:flex-row gap-5">
-                    <Image src="/globe.svg" alt="ÁguasDoPorto" width={200} height={200} />
-                    <Image src="/globe.svg" alt="ÁguasDoPorto" width={200} height={200} />
-                    <Image src="/globe.svg" alt="ÁguasDoPorto" width={200} height={200} />
-                </section>
-            </section>
-    </main>
+      {/* ---------- CTA ---------- */}
+      <CTASection
+        eyebrow="Junta-te"
+        title={
+          <>
+            Traz o Guarda-Rios <em>ao teu rio.</em>
+          </>
+        }
+        description="Escolas, autarquias e comunidades: qualquer um pode montar uma estação e juntar-se à rede de vigilância dos rios de Portugal."
+        photo={{ alt: "A equipa no Ribalab", caption: "a equipa no Ribalab" }}
+        actions={
+          <>
+            <Button href="/concursos" variant="orange" arrow>
+              Participar no concurso
+            </Button>
+            <Button href={LINKS.github} variant="ghost">
+              Ver no GitHub
+            </Button>
+          </>
+        }
+      />
+    </>
   );
 }
