@@ -1334,8 +1334,28 @@ em {
 .contest-showcase {
   margin-top: 70px;
 }
-.contest-showcase .conc-grid {
+.contest-showcase .conc-grid--interactive {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 25%);
+  grid-template-columns: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
   margin-top: 0;
+  padding-bottom: 18px;
+  scroll-padding-inline: 2px;
+  scroll-snap-type: x proximity;
+  scrollbar-color: var(--faint) transparent;
+}
+.conc-grid--interactive::-webkit-scrollbar {
+  height: 8px;
+}
+.conc-grid--interactive::-webkit-scrollbar-track {
+  background: transparent;
+}
+.conc-grid--interactive::-webkit-scrollbar-thumb {
+  background: var(--faint);
+  border-radius: 100px;
 }
 .conc-button {
   appearance: none;
@@ -1345,6 +1365,7 @@ em {
   color: inherit;
   background: transparent;
   cursor: pointer;
+  scroll-snap-align: start;
   transition: background 0.25s ease, padding 0.25s ease, box-shadow 0.25s ease;
 }
 .conc-button::after {
@@ -1683,6 +1704,23 @@ em {
   .contest-photo-scroll {
     grid-auto-columns: minmax(270px, 46%);
   }
+  .contest-showcase .conc-grid--interactive {
+    grid-auto-columns: minmax(235px, 46%);
+  }
+  .conc-grid--interactive .conc,
+  .conc-grid--interactive .conc:nth-child(even) {
+    border-left: none;
+    padding-left: 0;
+    padding-right: 30px;
+  }
+  .conc-grid--interactive .conc + .conc,
+  .conc-grid--interactive .conc:nth-child(even) {
+    border-left: 1px solid var(--line);
+    padding-left: 30px;
+  }
+  .conc-grid--interactive .conc .yr {
+    right: 22px;
+  }
   .spec-grid,
   .detail-grid,
   .part-grid {
@@ -1760,6 +1798,21 @@ em {
     grid-auto-columns: minmax(245px, 82%);
     margin-left: -2px;
     margin-right: -2px;
+  }
+  .contest-showcase .conc-grid--interactive {
+    grid-auto-columns: minmax(240px, 82%);
+  }
+  .conc-grid--interactive .conc,
+  .conc-grid--interactive .conc:nth-child(even) {
+    padding-right: 24px;
+  }
+  .conc-grid--interactive .conc + .conc,
+  .conc-grid--interactive .conc:nth-child(even) {
+    border-left: 1px solid var(--line);
+    padding-left: 24px;
+  }
+  .conc-grid--interactive .conc .yr {
+    right: 18px;
   }
   .hero-data {
     position: static;

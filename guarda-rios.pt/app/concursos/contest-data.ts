@@ -70,17 +70,58 @@ export const CONTESTS: ContestItem[] = [
       },
     ],
   },
+    {
+    name: "Atlântico Júnior",
+    year: "2024",
+    text: "Mostra de ciência e engenharia para jovens investigadores.",
+    photos: [],
+  },
   {
     name: "Mostra Nacional de Ciência",
     year: "2024",
     text: "Encontro nacional de projetos científicos escolares.",
-    photos: [],
+    photos: [
+      {
+        src: "/concursos/mostra-nacional-2025/Mostra Nacional 3.jpg",
+        alt: "Entrega de prémios na Mostra Nacional de Ciência",
+        caption: "prémios",
+      },
+      {
+        src: "/concursos/mostra-nacional-2025/Mostra Nacional 1.jpg",
+        alt: "Projeto Guarda-Rios na Mostra Nacional de Ciência",
+      },
+      {
+        src: "/concursos/mostra-nacional-2025/Mostra Nacional 2.jpg",
+        alt: "Projeto apresentado na Mostra Nacional de Ciência",
+      },
+    ],
   },
   {
     name: "i-Fest",
     year: "2025",
     text: "Festival de inovação, tecnologia e empreendedorismo.",
-    photos: [],
+    photos: [
+      {
+        src: "/concursos/i-fest-2026/iFest-4.jpg",
+        alt: "Entrega de prémios na i-Fest",
+      },
+      {
+        src: "/concursos/i-fest-2026/iFest-3.jpg",
+        alt: "Entrega de prémios na i-Fest",
+      },
+      {
+        src: "/concursos/i-fest-2026/iFest-8.jpg",
+        alt: "Projeto Guarda-Rios na i-Fest",
+      },
+      {
+        src: "/concursos/i-fest-2026/iFest-9.jpg",
+        alt: "Projeto apresentado na i-Fest",
+      },
+      {
+        src: "/concursos/i-fest-2026/iFest-10.jpg",
+        alt: "Projeto apresentado na i-Fest",
+      },
+    ],
   },
   {
     name: "FAQTOS",

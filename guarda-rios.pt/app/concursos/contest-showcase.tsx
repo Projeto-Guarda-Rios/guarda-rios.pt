@@ -14,6 +14,7 @@ const SCROLL_MS = 3200;
 
 export function ContestShowcase({ contests }: ContestShowcaseProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const contestRailRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
   const selected = contests[selectedIndex];
   const photos = selected.photos;
@@ -27,6 +28,21 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
 
     return () => window.clearInterval(timer);
   }, [contests.length]);
+
+  useEffect(() => {
+    const rail = contestRailRef.current;
+    const activeContest = rail?.querySelector<HTMLButtonElement>(
+      '[data-active="true"]',
+    );
+
+    if (!activeContest) return;
+
+    activeContest.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }, [selectedIndex]);
 
   useEffect(() => {
     const gallery = galleryRef.current;
@@ -61,19 +77,25 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
 
   return (
     <div className="contest-showcase">
-      <div className="conc-grid conc-grid--interactive">
+      <div
+        className="conc-grid conc-grid--interactive"
+        ref={contestRailRef}
+        aria-label="Concursos apresentados"
+      >
         {contests.map((item, index) => {
           const active = index === selectedIndex;
+          const contestKey = `${item.name}-${item.year}-${index}`;
 
           return (
             <button
               className={["conc", "conc-button", active ? "active" : ""]
                 .filter(Boolean)
                 .join(" ")}
-              key={item.name}
+              key={contestKey}
               type="button"
               aria-pressed={active}
               aria-controls="contest-gallery"
+              data-active={active}
               onClick={() => setSelectedIndex(index)}
             >
               {item.logo ? (
