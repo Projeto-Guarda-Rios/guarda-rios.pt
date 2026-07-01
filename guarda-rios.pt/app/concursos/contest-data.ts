@@ -78,7 +78,7 @@ export const CONTESTS: ContestItem[] = [
   },
   {
     name: "Mostra Nacional de Ciência",
-    year: "2024",
+    year: "2025",
     text: "Encontro nacional de projetos científicos escolares.",
     photos: [
       {
@@ -98,7 +98,7 @@ export const CONTESTS: ContestItem[] = [
   },
   {
     name: "i-Fest",
-    year: "2025",
+    year: "2026",
     text: "Festival de inovação, tecnologia e empreendedorismo.",
     photos: [
       {
