@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { PhotoFrame } from "./photo-frame";
+import type { LightboxImage } from "./lightbox";
 
 export interface EventPhoto {
   src?: string;
@@ -29,6 +30,16 @@ export function EventCard({
   photos = [],
   wide = false,
 }: EventCardProps) {
+  // Only real photos join the lightbox gallery; indices map back to it so the
+  // arrows browse exactly the pictures shown here.
+  const gallery: LightboxImage[] = photos
+    .filter((photo): photo is LightboxImage => !!photo.src)
+    .map((photo) => ({
+      src: photo.src as string,
+      alt: photo.alt,
+      caption: photo.caption,
+    }));
+
   return (
     <article className="event">
       <div className="event-head">
@@ -38,16 +49,23 @@ export function EventCard({
       <p className="lead">{description}</p>
       {photos.length > 0 ? (
         <div className={["photo-row", wide ? "photo-row--wide" : ""].join(" ")}>
-          {photos.map((photo, i) => (
-            <PhotoFrame
-              key={i}
-              src={photo.src}
-              alt={photo.alt}
-              caption={photo.caption}
-              ratio="4/3"
-              sizes="(max-width: 720px) 50vw, 25vw"
-            />
-          ))}
+          {photos.map((photo, i) => {
+            const galleryIndex = photo.src
+              ? gallery.findIndex((item) => item.src === photo.src)
+              : undefined;
+            return (
+              <PhotoFrame
+                key={i}
+                src={photo.src}
+                alt={photo.alt}
+                caption={photo.caption}
+                ratio="4/3"
+                sizes="(max-width: 720px) 50vw, 25vw"
+                gallery={gallery}
+                galleryIndex={galleryIndex}
+              />
+            );
+          })}
         </div>
       ) : null}
     </article>

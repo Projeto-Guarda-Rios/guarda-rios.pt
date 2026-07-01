@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Medal, PhotoFrame, SectionHeading } from "@/content/ui";
+import { Medal, PhotoFrame, SectionHeading, useLightbox } from "@/content/ui";
 import type { ContestItem } from "./contest-data";
 
 interface ContestShowcaseProps {
@@ -29,6 +29,14 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
   const lastInteractionRef = useRef(0);
   const inViewRef = useRef(false);
 
+  // While a photo is open in the lightbox, all autoplay stays frozen so the
+  // contest behind the preview never shifts underneath it.
+  const { isOpen: lightboxOpen } = useLightbox();
+  const lightboxOpenRef = useRef(false);
+  useEffect(() => {
+    lightboxOpenRef.current = lightboxOpen;
+  }, [lightboxOpen]);
+
   const selected = contests[selectedIndex];
   const photos = selected.photos;
 
@@ -37,6 +45,7 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
   }, []);
 
   const isAutoplayAllowed = useCallback(() => {
+    if (lightboxOpenRef.current) return false;
     if (!inViewRef.current) return false;
     if (hoveringRef.current) return false;
     if (Date.now() - lastInteractionRef.current < RESUME_AFTER_MS) return false;
@@ -199,7 +208,7 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
           aria-label={`Fotografias de ${selected.name}`}
         >
           {photos.length > 0 ? (
-            photos.map((photo) => (
+            photos.map((photo, index) => (
               <PhotoFrame
                 className="contest-photo"
                 key={photo.src}
@@ -208,6 +217,8 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
                 caption={photo.caption}
                 ratio="4/3"
                 sizes="(max-width: 720px) 78vw, 31vw"
+                gallery={photos}
+                galleryIndex={index}
               />
             ))
           ) : (

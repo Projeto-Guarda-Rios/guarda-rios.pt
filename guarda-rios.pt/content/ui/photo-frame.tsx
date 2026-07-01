@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { PhotoZoomTrigger, type LightboxImage } from "./lightbox";
 
 interface PhotoFrameProps {
   /** When set, a real photo is rendered with next/image (object-fit: cover). */
@@ -15,13 +16,22 @@ interface PhotoFrameProps {
   contain?: boolean;
   /** next/image `sizes` hint for responsive loading. */
   sizes?: string;
+  /**
+   * The gallery this photo belongs to. When provided (alongside `src`), the
+   * frame becomes clickable and opens the site-wide lightbox at `galleryIndex`,
+   * letting the user browse the whole set at full aspect ratio.
+   */
+  gallery?: LightboxImage[];
+  /** This photo's position within `gallery`. */
+  galleryIndex?: number;
   className?: string;
 }
 
 /**
  * Framed photo slot from the A2 mockup. With a `src` it renders the photo;
  * without one it shows the elegant labelled placeholder so unfinished pages
- * still look intentional.
+ * still look intentional. Pass `gallery`/`galleryIndex` to make it open the
+ * lightbox on click.
  */
 export function PhotoFrame({
   src,
@@ -31,12 +41,18 @@ export function PhotoFrame({
   duotone = false,
   contain = false,
   sizes = "(max-width: 900px) 100vw, 50vw",
+  gallery,
+  galleryIndex,
   className,
 }: PhotoFrameProps) {
+  const interactive =
+    !!src && !!gallery && gallery.length > 0 && typeof galleryIndex === "number";
+
   const classes = [
     "photo",
     duotone ? "photo--duo" : "",
     contain ? "photo--contain" : "",
+    interactive ? "photo--interactive" : "",
     className,
   ]
     .filter(Boolean)
@@ -59,6 +75,13 @@ export function PhotoFrame({
         </span>
       )}
       {caption ? <figcaption className="ph-cap">{caption}</figcaption> : null}
+      {interactive ? (
+        <PhotoZoomTrigger
+          gallery={gallery}
+          index={galleryIndex}
+          label={alt}
+        />
+      ) : null}
     </figure>
   );
 }

@@ -14,6 +14,11 @@ export { PartnerPlate } from "./partner-plate";
 export { EventCard, type EventPhoto } from "./event-card";
 export { CTASection } from "./cta-section";
 export {
+  LightboxProvider,
+  useLightbox,
+  type LightboxImage,
+} from "./lightbox";
+export {
   ArrowRight,
   Medal,
   GitHubIcon,

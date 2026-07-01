@@ -1831,3 +1831,203 @@ em {
     transition: none !important;
   }
 }
+
+/* ---------- clickable photo (opens lightbox) ---------- */
+.photo--interactive {
+  cursor: zoom-in;
+}
+.photo-zoom {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
+}
+.photo-zoom-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r);
+  color: #fff;
+  background: rgba(14, 34, 41, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(-3px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.photo-zoom-badge svg {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.photo--interactive:hover .photo-zoom-badge,
+.photo-zoom:focus-visible .photo-zoom-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+.photo-zoom:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ---------- lightbox overlay ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 48px);
+  background: rgba(9, 22, 27, 0.86);
+  backdrop-filter: blur(10px);
+  animation: lightbox-fade 0.2s ease both;
+}
+@keyframes lightbox-fade {
+  from {
+    opacity: 0;
+  }
+}
+.lightbox-dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  width: 100%;
+  max-width: min(96vw, 1500px);
+  outline: none;
+  animation: lightbox-pop 0.24s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+@keyframes lightbox-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+/* Controls live in their own rows/columns — never over the photo. */
+.lightbox-topbar {
+  display: flex;
+  justify-content: flex-end;
+}
+.lightbox-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 22px);
+  min-height: 0;
+}
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  min-width: 0;
+  justify-content: center;
+}
+.lightbox-frame {
+  position: relative;
+  /* `--lb-ar` (the image's natural width/height) is set inline once the photo
+     loads. Width is the smallest of the viewport caps and the width implied by
+     a full-height image, so the frame always matches the true aspect ratio
+     without letterboxing. The vw cap leaves room for the arrow columns. */
+  aspect-ratio: var(--lb-ar, 1.5);
+  width: min(82vw, 1400px, calc(78vh * var(--lb-ar, 1.5)));
+  border-radius: var(--r-photo);
+  overflow: hidden;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.75);
+}
+.lightbox-img {
+  object-fit: contain;
+}
+.lightbox-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.lightbox-caption {
+  margin: 0;
+  max-width: 68ch;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.82);
+}
+.lightbox-counter {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+.lightbox-close,
+.lightbox-nav {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(20, 44, 52, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.18s ease;
+}
+.lightbox-close svg,
+.lightbox-nav svg {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: rgba(190, 90, 38, 0.92);
+}
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.lightbox-close {
+  width: 42px;
+  height: 42px;
+}
+.lightbox-nav {
+  width: 48px;
+  height: 48px;
+}
+.lightbox-nav--next svg {
+  transform: rotate(180deg);
+}
+@media (max-width: 720px) {
+  .lightbox-nav {
+    width: 42px;
+    height: 42px;
+  }
+  .lightbox-stage {
+    gap: 6px;
+  }
+  /* On phones the zoom hint should always read as tappable. */
+  .photo-zoom-badge {
+    opacity: 1;
+    transform: none;
+  }
+}

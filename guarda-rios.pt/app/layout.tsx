@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/content/theme-provider";
 import { SiteHeader } from "@/content/site-header";
 import { SiteFooter } from "@/content/site-footer";
+import { LightboxProvider } from "@/content/ui";
 
 /* Display face — variable Fraunces with optical sizing + italics. */
 const fraunces = Fraunces({
@@ -75,9 +76,11 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
+          <LightboxProvider>
+            <SiteHeader />
+            <main>{children}</main>
+            <SiteFooter />
+          </LightboxProvider>
         </ThemeProvider>
       </body>
     </html>
