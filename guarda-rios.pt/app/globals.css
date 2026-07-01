@@ -1331,6 +1331,78 @@ em {
 .conc:last-child .yr {
   right: 0;
 }
+.contest-showcase {
+  margin-top: 70px;
+}
+.contest-showcase .conc-grid {
+  margin-top: 0;
+}
+.conc-button {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.25s ease, padding 0.25s ease, box-shadow 0.25s ease;
+}
+.conc-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 30px;
+  bottom: -1px;
+  height: 2px;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+.conc-button:hover {
+  background: var(--surface);
+}
+.conc-button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: -2px;
+}
+.conc-button.active::after {
+  background: var(--orange);
+}
+.conc-button.active h4 {
+  color: var(--blue);
+}
+.contest-gallery {
+  margin-top: 72px;
+}
+.contest-photo-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 31%);
+  gap: 18px;
+  margin-top: 34px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 0 2px 18px;
+  scroll-padding-inline: 2px;
+  scroll-snap-type: x proximity;
+  scrollbar-color: var(--faint) transparent;
+}
+.contest-photo-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.contest-photo-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.contest-photo-scroll::-webkit-scrollbar-thumb {
+  background: var(--faint);
+  border-radius: 100px;
+}
+.contest-photo {
+  scroll-snap-align: start;
+  box-shadow: var(--shadow-soft);
+}
+.contest-photo--placeholder {
+  max-width: 420px;
+}
 
 /* competition detail cards */
 .detail-grid {
@@ -1601,6 +1673,16 @@ em {
   .conc .yr {
     right: 0;
   }
+  .conc-button:nth-child(odd)::after {
+    right: 30px;
+  }
+  .conc-button:nth-child(even)::after {
+    left: 30px;
+    right: 0;
+  }
+  .contest-photo-scroll {
+    grid-auto-columns: minmax(270px, 46%);
+  }
   .spec-grid,
   .detail-grid,
   .part-grid {
@@ -1661,6 +1743,23 @@ em {
   .conc:nth-child(even) {
     border-left: none;
     padding-left: 0;
+  }
+  .contest-showcase {
+    margin-top: 46px;
+  }
+  .conc-button::after,
+  .conc-button:nth-child(odd)::after,
+  .conc-button:nth-child(even)::after {
+    left: 0;
+    right: 0;
+  }
+  .contest-gallery {
+    margin-top: 54px;
+  }
+  .contest-photo-scroll {
+    grid-auto-columns: minmax(245px, 82%);
+    margin-left: -2px;
+    margin-right: -2px;
   }
   .hero-data {
     position: static;
