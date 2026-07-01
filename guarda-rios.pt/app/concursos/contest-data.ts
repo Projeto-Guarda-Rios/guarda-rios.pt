@@ -45,6 +45,7 @@ export const CONTESTS: ContestItem[] = [
   {
     name: "Atlântico Júnior",
     year: "2023",
+    logo: "/concursos/premio-atlantico-junior-logo.jpg",
     text: "Mostra de ciência e engenharia para jovens investigadores.",
     photos: [
       {
@@ -73,12 +74,38 @@ export const CONTESTS: ContestItem[] = [
     {
     name: "Atlântico Júnior",
     year: "2024",
+    logo: "/concursos/premio-atlantico-junior-logo.jpg",
     text: "Mostra de ciência e engenharia para jovens investigadores.",
-    photos: [],
+    photos: [
+      {
+        src: "/concursos/atlantico-junior-2024/atlantico-junior-2024-1.png",
+        alt: "Equipa Guarda-Rios no Atlântico Júnior",
+        caption: "Equipa",
+      },
+      {
+        src: "/concursos/atlantico-junior-2024/atlantico-junior-2024-2.png",
+        alt: "Equipa Guarda-Rios no Atlântico Júnior",
+        caption: "Equipa",
+      },
+      {
+        src: "/concursos/atlantico-junior-2024/atlantico-junior-2024-3.png",
+        alt: "Equipa Guarda-Rios no Atlântico Júnior",
+      },
+      {
+        src: "/concursos/atlantico-junior-2024/atlantico-junior-2024-4.png",
+        alt: "Equipa Guarda-Rios no Atlântico Júnior",
+      },
+      {
+        src: "/concursos/atlantico-junior-2024/atlantico-junior-2024-5.png",
+        alt: "Equipa Guarda-Rios no Atlântico Júnior",
+        caption: "Apresentação",
+      },
+    ],
   },
   {
     name: "Mostra Nacional de Ciência",
     year: "2025",
+    logo: "/concursos/mostra_nacional_de_ciencia_logo.png",
     text: "Encontro nacional de projetos científicos escolares.",
     photos: [
       {
@@ -97,9 +124,10 @@ export const CONTESTS: ContestItem[] = [
     ],
   },
   {
-    name: "i-Fest",
+    name: "I-Fest",
     year: "2026",
-    text: "Festival de inovação, tecnologia e empreendedorismo.",
+    logo: "/concursos/i-fest-logo.png",
+    text: "Festival internacional de ciência, engenharia, biologia, multimédia e matemática.",
     photos: [
       {
         src: "/concursos/i-fest-2026/iFest-4.jpg",
