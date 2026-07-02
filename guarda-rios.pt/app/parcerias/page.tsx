@@ -34,7 +34,7 @@ const PARTNERS = [
     role: "Investigação ambiental · Guimarães",
     logo: "/parcerias/laboratorio-da-paisagem.jpg",
     description:
-      "Uma segunda estação de testes será instalada junto a um curso de água por si monitorizado, permitindo comparar e validar os dados recolhidos.",
+      "Está prevista uma segunda estação de testes junto a um curso de água por si monitorizado, permitindo comparar e validar os dados recolhidos.",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function ParceriasPage() {
                 Três instituições, um mesmo <em>rio</em>
               </>
             }
-            lead="O apoio destas entidades é determinante para o rigor do projeto: ajudam a definir locais de instalação, a calibrar os sensores e a validar as leituras face a amostragens de referência."
+            lead="O apoio destas entidades é determinante para o rigor do projeto: ajudam a definir locais de teste, a calibrar os sensores e a validar as leituras face a amostragens de referência."
           />
 
           <div className="part-grid">
@@ -107,7 +107,7 @@ export default function ParceriasPage() {
             Quer trabalhar <em>connosco?</em>
           </>
         }
-        description="Escolas, autarquias e instituições que queiram acolher uma estação ou apoiar o projeto podem falar connosco — há sempre um rio para vigiar."
+        description="Escolas, autarquias e instituições que queiram acolher testes, validar dados ou apoiar o projeto podem falar connosco."
         photo={{ alt: "Trabalho de campo com parceiros", caption: "trabalho de campo" }}
         actions={
           <>

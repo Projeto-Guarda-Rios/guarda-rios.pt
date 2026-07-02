@@ -73,9 +73,9 @@ export default function SobrePage() {
                 identificar geograficamente possíveis focos de poluição,
                 possibilitando a implementação imediata de ações que contribuam
                 para minimizar ou solucionar problemas ambientais. Estes
-                sistemas avaliam a qualidade da água através da medição, em tempo
-                real, de parâmetros físico-químicos, transmitidos continuamente
-                e disponibilizados na web.
+                sistemas foram concebidos para avaliar a qualidade da água
+                através da medição regular de parâmetros físico-químicos e da
+                sua disponibilização num portal público.
               </p>
               <p>
                 De forma a realizar uma abordagem ecológica mais integrada e
@@ -89,9 +89,9 @@ export default function SobrePage() {
                 diferenciador deste projeto, pretendendo-se disponibilizar na web
                 todos os procedimentos associados à sua implementação, além dos
                 dados recolhidos, após a sua validação. Com o Projeto
-                Guarda-Rios pretendemos inspirar outros a juntarem-se a nós,
-                criando uma rede de monitorização que contribua para que os rios
-                e oceanos fiquem limpos e saudáveis.
+                Guarda-Rios pretendemos inspirar outros a replicar, testar e
+                melhorar o sistema, criando as bases para uma rede de
+                monitorização útil à proteção dos rios.
               </p>
             </div>
 
@@ -115,11 +115,11 @@ export default function SobrePage() {
       <StatBand
         stats={[
           {
-            value: "24/7",
+            value: "2",
             caption: (
               <>
-                <strong>Monitorização.</strong> Vigilância contínua da água dos
-                nossos rios.
+                <strong>Parâmetros confirmados.</strong> Temperatura e turbidez
+                no desenho atual da estação.
               </>
             ),
           },

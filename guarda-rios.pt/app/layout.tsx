@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · Projeto Guarda-Rios",
   },
   description:
-    "Estações open-source e solares que monitorizam a qualidade da água dos rios de Portugal em tempo real. Um projeto de alunos do Grupo Ribadouro, no Porto.",
+    "Estações open-source e solares para monitorizar a qualidade da água dos rios de Portugal. Um projeto de alunos do Grupo Ribadouro, no Porto.",
   keywords: [
     "Guarda-Rios",
     "qualidade da água",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Projeto Guarda-Rios",
     title: "Projeto Guarda-Rios · Ciência cidadã pelos rios de Portugal",
     description:
-      "Estações open-source e solares que monitorizam a qualidade da água dos rios de Portugal em tempo real.",
+      "Estações open-source e solares para monitorizar a qualidade da água dos rios de Portugal.",
     images: [{ url: "/brand/PGR_Logo-Full.png", alt: "Projeto Guarda-Rios" }],
   },
 };

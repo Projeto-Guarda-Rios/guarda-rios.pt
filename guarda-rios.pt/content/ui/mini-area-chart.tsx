@@ -1,8 +1,6 @@
 interface MiniAreaChartProps {
   /** Series values; rendered left→right and auto-scaled to the frame. */
   data?: number[];
-  /** X-axis tick labels shown below the chart. */
-  labels?: string[];
   /** Line + fill colour token. */
   color?: string;
   /** Unique gradient id — set this when several charts share a page. */
@@ -39,7 +37,6 @@ function smoothPath(points: { x: number; y: number }[]): string {
  */
 export function MiniAreaChart({
   data = [11.9, 12.3, 13.1, 12.8, 13.6, 14.0, 14.4, 14.8],
-  labels = ["00h", "06h", "12h", "18h", "agora"],
   color = "var(--orange)",
   gradientId = "area",
 }: MiniAreaChartProps) {

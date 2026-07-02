@@ -19,7 +19,7 @@ const ARCHITECTURE = [
   {
     n: "01",
     title: "Caixa",
-    text: "Invólucro estanque, impresso em 3D em filamento ASA, que protege toda a eletrónica junto ao rio em qualquer estação do ano.",
+    text: "Invólucro impresso em 3D em filamento ASA, desenhado para proteger a eletrónica junto ao rio e atualmente em validação de estanquidade.",
   },
   {
     n: "02",
@@ -34,7 +34,7 @@ const ARCHITECTURE = [
   {
     n: "04",
     title: "Painel solar",
-    text: "Energia limpa e autónoma que, com duas baterias 18650, mantém a estação a funcionar 24 horas por dia.",
+    text: "Energia autónoma que, com duas baterias 18650 e ciclos de baixo consumo, permite preparar a estação para operação prolongada.",
   },
 ];
 
@@ -50,7 +50,8 @@ export default function EstacaoPage() {
           <p className="lead">
             Concebida e construída pelos alunos no Ribalab: modular, de baixo
             custo e totalmente replicável. Alimentada a energia solar, mede a
-            água e envia os dados por rede móvel — sem fios, sem mensalidades.
+            água e envia os dados por rede móvel NB-IoT, sem depender de Wi-Fi
+            nem de gateways próprios.
           </p>
         </div>
       </section>
@@ -71,8 +72,8 @@ export default function EstacaoPage() {
           <div className="est-grid">
             <div className="est-figure">
               <PhotoFrame
-                alt="Estação Guarda-Rios no terreno"
-                caption="estação no terreno"
+                alt="Protótipo da estação Guarda-Rios"
+                caption="protótipo da estação"
                 ratio="4/5"
                 duotone
                 sizes="(max-width: 1080px) 100vw, 440px"
@@ -213,8 +214,9 @@ export default function EstacaoPage() {
             </p>
             <p>
               A tecnologia <b>NB-IoT</b> foi escolhida por operar na rede celular
-              existente, oferecendo cobertura nacional sem gateways próprios: uma
-              estação pode ser instalada em qualquer local com cobertura móvel.
+              existente e reduzir a necessidade de infraestrutura local: uma
+              estação pode transmitir em locais onde exista cobertura NB-IoT
+              adequada.
             </p>
           </div>
         </div>
@@ -230,7 +232,7 @@ export default function EstacaoPage() {
                 Dois <em>parâmetros</em>
               </>
             }
-            lead="Atualmente medimos temperatura e turbidez — dois indicadores que permitem acompanhar, em tempo real, algumas das características mais importantes da água. E o sistema é modular: pH, oxigénio dissolvido e condutividade podem juntar-se sem alterar a placa principal."
+            lead="Atualmente medimos temperatura e turbidez — dois indicadores que ajudam a acompanhar características importantes da água. O sistema é modular: pH, oxigénio dissolvido e condutividade podem ser integrados sem alterar a placa principal."
           />
 
           <div className="detail-grid">

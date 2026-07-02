@@ -37,7 +37,7 @@ export default function DivulgacaoPage() {
           <EventCard
             title="GreenFest 2025"
             year="2025"
-            description="Levámos o Guarda-Rios ao GreenFest, um festival dedicado à sustentabilidade, onde apresentámos as estações e o portal de dados ao grande público."
+            description="Levámos o Guarda-Rios ao GreenFest, um festival dedicado à sustentabilidade, onde apresentámos os protótipos da estação e o portal de dados ao grande público."
             photos={[
               { src: "/divulgacao/greenfest-2025/greenfest-1.jpg", alt: "Guarda-Rios no GreenFest 2025", caption: "GreenFest" },
               { src: "/divulgacao/greenfest-2025/greenfest-2.jpg", alt: "Estação apresentada no GreenFest 2025" },
@@ -91,7 +91,7 @@ export default function DivulgacaoPage() {
                 <h4>Encontro Guarda-Rios</h4>
                 <p>
                   Momentos que reúnem as equipas do projeto para partilhar
-                  progresso, resultados e os próximos passos da rede.
+                  progresso, resultados e os próximos passos do Guarda-Rios.
                 </p>
               </div>
             </article>

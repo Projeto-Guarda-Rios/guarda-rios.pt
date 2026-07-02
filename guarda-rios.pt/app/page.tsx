@@ -33,7 +33,7 @@ const ENTRIES = [
     teaser:
       "Solar, modular e replicável: do sensor submerso à transmissão por rede móvel NB-IoT.",
     photo: undefined,
-    caption: "estação no terreno",
+    caption: "estação Guarda-Rios",
   },
   {
     href: "/divulgacao",
@@ -90,13 +90,14 @@ export default function Home() {
                 </span>
               </h1>
               <p className="hero-mission">
-                Estações open-source que monitorizam a qualidade da água dos
-                rios de Portugal, em tempo real.
+                Estações open-source para monitorizar a qualidade da água dos
+                rios de Portugal com tecnologia acessível e replicável.
               </p>
               <p className="hero-sub">
                 Um projeto de alunos do Grupo Ribadouro, no Porto — ciência
-                aberta ao serviço das nossas ribeiras. Qualquer escola ou
-                comunidade pode montar a sua estação.
+                cidadã e tecnologia aberta ao serviço das nossas ribeiras. O
+                sistema já foi validado em laboratório e está preparado para
+                testes de campo com parceiros.
               </p>
               <div className="hero-ctas">
                 <Button href={LINKS.portal} arrow>
@@ -118,7 +119,7 @@ export default function Home() {
               />
               <div className="hero-data">
                 <div className="hd-top">
-                  <span className="dot" /> Ao vivo · Estação-piloto
+                  <span className="dot" /> Exemplo · Estação-piloto
                 </div>
                 <div className="hd-row">
                   <span className="hd-k">Temperatura</span>
@@ -174,11 +175,11 @@ export default function Home() {
             ),
           },
           {
-            value: "24/7",
+            value: "<1%",
             caption: (
               <>
-                <strong>Monitorização contínua.</strong> Leituras a chegar de
-                dia e de noite.
+                <strong>Ciclo ativo.</strong> O ESP32 acorda, transmite e volta
+                a hibernar para poupar energia.
               </>
             ),
           },
@@ -194,20 +195,20 @@ export default function Home() {
         ]}
       />
 
-      {/* ---------- DADOS EM DIRETO (teaser) ---------- */}
+      {/* ---------- DADOS (teaser) ---------- */}
       <section className="section bg-2">
         <div className="wrap">
           <div className="dados-top">
             <SectionHeading
-              eyebrow="Dados em tempo real"
+              eyebrow="Dados abertos"
               title={
                 <>
-                  A água, <em>em direto.</em>
+                  Da estação ao <em>portal.</em>
                 </>
               }
-              lead="Cada estação transmite leituras contínuas para um portal público e aberto. Estes são exemplos do que vai encontrar."
+              lead="O fluxo técnico já liga sensores, API REST, InfluxDB, Grafana e o portal público. Os valores abaixo ilustram os parâmetros confirmados: temperatura e turbidez."
             />
-            <LiveTag>A transmitir agora</LiveTag>
+            <LiveTag>Exemplo</LiveTag>
           </div>
 
           <div className="dados-grid">
@@ -234,8 +235,8 @@ export default function Home() {
 
             <Card
               className="chart-card"
-              title="Temperatura · últimas 24 h"
-              action={<LiveTag />}
+              title="Temperatura · exemplo de série"
+              action={<LiveTag>Demo</LiveTag>}
             >
               <MiniAreaChart />
               <ChartAxis labels={["00h", "06h", "12h", "18h", "agora"]} />
@@ -249,7 +250,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer noopener"
             >
-              Explorar todas as estações no Portal de Dados
+              Abrir o Portal de Dados
               <ArrowRight width={16} height={16} />
             </a>
           </div>
@@ -302,7 +303,7 @@ export default function Home() {
             Traz o Guarda-Rios <em>ao teu rio.</em>
           </>
         }
-        description="Escolas, autarquias e comunidades: qualquer um pode montar uma estação e juntar-se à rede de vigilância dos rios de Portugal."
+        description="Escolas, autarquias e comunidades podem replicar a estação, testar o modelo localmente e ajudar a construir uma futura rede aberta de vigilância dos rios."
         photo={{ alt: "A equipa no Ribalab", caption: "a equipa no Ribalab" }}
         actions={
           <>

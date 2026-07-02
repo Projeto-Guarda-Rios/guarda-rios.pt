@@ -34,7 +34,7 @@ const MAKING = [
   {
     n: "04",
     title: "Testes e estanquidade",
-    text: "Bancada onde se validam leituras, consumo energético e o isolamento à prova de água, antes de cada estação seguir para o rio.",
+    text: "Bancada onde se validam leituras, consumo energético e isolamento à água antes de avançar para testes no exterior.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function RibalabPage() {
                 maker onde os alunos passam das ideias às mãos na massa. É aqui
                 que o Guarda-Rios acontece: desenham-se as placas de circuito,
                 imprimem-se as caixas em 3D, escreve-se o firmware e testam-se as
-                estações antes de irem para o terreno.
+                estações antes dos ensaios de campo.
               </p>
               <p>
                 Mais do que uma oficina, é um ambiente de{" "}
