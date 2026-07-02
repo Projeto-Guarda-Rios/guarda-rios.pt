@@ -150,8 +150,9 @@ export default function RibalabPage() {
 
             <aside className="aside-sticky">
               <PhotoFrame
-                alt="Bancada de trabalho no Ribalab"
-                caption="bancada · Ribalab"
+                src="/ribalab/focus-on-sensor.png"
+                alt="Alunos do Projeto Guarda-Rios a testar eletrónica na bancada do Ribalab"
+                caption="bancada técnica"
                 ratio="4/5"
                 duotone
               />
@@ -159,10 +160,34 @@ export default function RibalabPage() {
           </div>
 
           <div className="photo-row" style={{ marginTop: 52 }}>
-            <PhotoFrame alt="Soldadura de uma placa" caption="soldadura" ratio="4/3" sizes="(max-width: 720px) 50vw, 25vw" />
-            <PhotoFrame alt="Impressão 3D de uma caixa" caption="impressão 3D" ratio="4/3" sizes="(max-width: 720px) 50vw, 25vw" />
-            <PhotoFrame alt="Testes de firmware" caption="firmware" ratio="4/3" sizes="(max-width: 720px) 50vw, 25vw" />
-            <PhotoFrame alt="Testes de estanquidade" caption="testes" ratio="4/3" sizes="(max-width: 720px) 50vw, 25vw" />
+            <PhotoFrame
+              src="/estacao/aquanode-pcb.png"
+              alt="Desenho da placa AquaNode desenhada no Ribalab"
+              caption="desenho de PCB"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/estacao/caixa-3d.jpg"
+              alt="Caixa da estação impressa em 3D em filamento ASA sobre a bancada"
+              caption="impressão 3D"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/ribalab/calibracao-sensor.jpg"
+              alt="Aluno a calibrar um sensor de turbidez com solução de referência"
+              caption="calibração"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/ribalab/teste-estanquidade.jpg"
+              alt="Caixa impressa em 3D dentro de água a testar a estanquidade"
+              caption="estanquidade"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
           </div>
         </div>
       </section>
@@ -176,7 +201,11 @@ export default function RibalabPage() {
           </>
         }
         description="Todo o hardware, firmware e ficheiros de impressão estão abertos. Explora, replica e contribui — a começar pelo repositório do projeto."
-        photo={{ alt: "A equipa no Ribalab", caption: "a equipa no Ribalab" }}
+        photo={{
+          src: "/ribalab/ribalab-team-guarda-rios.jpg",
+          alt: "Alunos do Projeto Guarda-Rios na bancada do Ribalab",
+          caption: "Ribalab",
+        }}
         actions={
           <>
             <Button href={LINKS.github} variant="orange" arrow>

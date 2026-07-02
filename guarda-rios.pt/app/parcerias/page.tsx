@@ -108,7 +108,10 @@ export default function ParceriasPage() {
           </>
         }
         description="Escolas, autarquias e instituições que queiram acolher testes, validar dados ou apoiar o projeto podem falar connosco."
-        photo={{ alt: "Trabalho de campo com parceiros", caption: "trabalho de campo" }}
+        photo={{
+          src: "/ribalab/ribalab-team-guarda-rios.jpg",
+          alt: "Equipa Guarda Rios no Ribalab",
+        }}
         actions={
           <>
             <Button href={`mailto:${LINKS.email}`} variant="orange" arrow>

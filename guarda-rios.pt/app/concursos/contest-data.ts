@@ -134,16 +134,28 @@ export const CONTESTS: ContestItem[] = [
         alt: "Entrega de prémios na i-Fest",
       },
       {
+        src: "/concursos/i-fest-2026/equipa-premios-bandeiras.jpg",
+        alt: "Entrega de prémios na i-Fest",
+      },
+      {
         src: "/concursos/i-fest-2026/iFest-3.jpg",
         alt: "Entrega de prémios na i-Fest",
       },
       {
-        src: "/concursos/i-fest-2026/iFest-8.jpg",
-        alt: "Projeto Guarda-Rios na i-Fest",
+        src: "/concursos/i-fest-2026/palco-premios-usable-aspect.jpg",
+        alt: "Entrega de prémios na i-Fest",
+      },
+      {
+        src: "/concursos/i-fest-2026/palco-medalha.jpg",
+        alt: "Entrega de prémios na i-Fest",
       },
       {
         src: "/concursos/i-fest-2026/iFest-9.jpg",
         alt: "Projeto apresentado na i-Fest",
+      },
+      {
+        src: "/concursos/i-fest-2026/iFest-8.jpg",
+        alt: "Projeto Guarda-Rios na i-Fest",
       },
       {
         src: "/concursos/i-fest-2026/iFest-10.jpg",

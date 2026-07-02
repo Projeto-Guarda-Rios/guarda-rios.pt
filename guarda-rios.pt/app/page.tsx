@@ -23,8 +23,8 @@ const ENTRIES = [
     title: "O nosso hackerspace",
     teaser:
       "O espaço maker do Grupo Ribadouro onde os alunos desenham e constroem cada estação.",
-    photo: undefined,
-    caption: "Ribalab",
+    photo: "/ribalab/equipa-bancada.jpg",
+    caption: "bancada técnica",
   },
   {
     href: "/estacao",
@@ -32,8 +32,8 @@ const ENTRIES = [
     title: "Tecnologia aberta",
     teaser:
       "Solar, modular e replicável: do sensor submerso à transmissão por rede móvel NB-IoT.",
-    photo: undefined,
-    caption: "estação Guarda-Rios",
+    photo: "/estacao/caixa-pcb.jpg",
+    caption: "placa principal",
   },
   {
     href: "/divulgacao",
@@ -59,8 +59,8 @@ const ENTRIES = [
     title: "Quem caminha connosco",
     teaser:
       "Instituições que apoiam e orientam o projeto, da engenharia à gestão da água.",
-    photo: undefined,
-    caption: "parcerias",
+    photo: "/ribalab/calibracao-sensor.jpg",
+    caption: "calibração de sensores",
   },
 ];
 
@@ -111,8 +111,9 @@ export default function Home() {
 
             <div className="hero-figure">
               <PhotoFrame
-                alt="Fotografia de um rio de Portugal"
-                caption="rio · fotografia"
+                src="/estacao/estacao-montada.jpg"
+                alt="Estação Guarda-Rios montada, com o AquaNode e a caixa impressa em 3D"
+                caption="estação montada"
                 ratio="5/6"
                 duotone
                 sizes="(max-width: 1080px) 100vw, 480px"
@@ -304,7 +305,11 @@ export default function Home() {
           </>
         }
         description="Escolas, autarquias e comunidades podem replicar a estação, testar o modelo localmente e ajudar a construir uma futura rede aberta de vigilância dos rios."
-        photo={{ alt: "A equipa no Ribalab", caption: "a equipa no Ribalab" }}
+        photo={{
+          src: "/estacao/rede-nb-iot.jpg",
+          alt: "Conceito de rede de estações Guarda-Rios ao longo de um rio, ligadas por NB-IoT",
+          caption: "conceito · rede de estações",
+        }}
         actions={
           <>
             <Button href="/concursos" variant="orange" arrow>

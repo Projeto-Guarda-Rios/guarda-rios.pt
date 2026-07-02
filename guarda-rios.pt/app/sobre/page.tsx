@@ -12,8 +12,28 @@ export const metadata: Metadata = {
     "A missão do Projeto Guarda-Rios: promover a conservação da qualidade da água e dos ecossistemas através da ciência cidadã e de tecnologia aberta.",
 };
 
-/** Placeholder team years — photos arriving later. */
-const TEAM_YEARS = ["2022 / 2023", "2023 / 2024", "2024 / 2025", "2025 / 2026"];
+const TEAM_MOMENTS = [
+  {
+    src: "/ribalab/equipa-bancada.jpg",
+    alt: "Alunos do Projeto Guarda-Rios a testar eletrónica na bancada do Ribalab",
+    caption: "equipa",
+  },
+  {
+    src: "/ribalab/teste-estanquidade.jpg",
+    alt: "Teste de estanquidade da caixa impressa em 3D dentro de água",
+    caption: "testes",
+  },
+  {
+    src: "/estacao/caixa-3d.jpg",
+    alt: "Caixa da estação impressa em 3D em filamento ASA",
+    caption: "impressão 3D",
+  },
+  {
+    src: "/estacao/estacao-montada.jpg",
+    alt: "Estação Guarda-Rios montada, com o AquaNode e a caixa impressa em 3D",
+    caption: "protótipo",
+  },
+];
 
 export default function SobrePage() {
   return (
@@ -97,8 +117,9 @@ export default function SobrePage() {
 
             <aside className="aside-sticky">
               <PhotoFrame
-                alt="Trabalho de campo do Projeto Guarda-Rios"
-                caption="trabalho de campo"
+                src="/ribalab/calibracao-sensor.jpg"
+                alt="Aluno a calibrar um sensor de turbidez com solução de referência"
+                caption="calibração"
                 ratio="4/5"
                 duotone
               />
@@ -167,16 +188,18 @@ export default function SobrePage() {
           >
             Começou no ano letivo de 2022/2023 com uma equipa de quatro alunos
             do Colégio Ribadouro e cresceu, no ano seguinte, para dezenas de
-            alunos dos três colégios do Grupo Ribadouro. As fotografias de cada
-            equipa serão publicadas em breve.
+            alunos dos três colégios do Grupo Ribadouro. Estes momentos mostram
+            o trabalho colaborativo da equipa: montagem, testes e construção
+            da estação no Ribalab.
           </p>
 
           <div className="photo-row" style={{ marginTop: 40 }}>
-            {TEAM_YEARS.map((year) => (
+            {TEAM_MOMENTS.map((moment) => (
               <PhotoFrame
-                key={year}
-                alt={`Equipa Guarda-Rios ${year}`}
-                caption={year}
+                key={moment.src}
+                src={moment.src}
+                alt={moment.alt}
+                caption={moment.caption}
                 ratio="4/5"
                 sizes="(max-width: 720px) 50vw, 25vw"
               />

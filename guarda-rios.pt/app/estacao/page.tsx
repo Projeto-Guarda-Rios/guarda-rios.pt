@@ -72,9 +72,10 @@ export default function EstacaoPage() {
           <div className="est-grid">
             <div className="est-figure">
               <PhotoFrame
-                alt="Protótipo da estação Guarda-Rios"
-                caption="protótipo da estação"
-                ratio="4/5"
+                src="/estacao/estacao-completa.png"
+                alt="Protótipo da estação Guarda-Rios, com o AquaNode e a caixa impressa em 3D"
+                caption="Estação Guarda Rios  "
+                ratio="5/4"
                 duotone
                 sizes="(max-width: 1080px) 100vw, 440px"
               />
@@ -219,6 +220,21 @@ export default function EstacaoPage() {
               adequada.
             </p>
           </div>
+
+          <div style={{ marginTop: 40, maxWidth: "72ch" }}>
+            <PhotoFrame
+              src="/estacao/rede-nb-iot.jpg"
+              alt="Ilustração conceptual de uma rede de estações Guarda-Rios ao longo de um rio, ligadas por NB-IoT"
+              caption="Conceito · Rede de estações"
+              ratio="16/9"
+            />
+            <p style={{ marginTop: 16, color: "var(--muted)", fontSize: "0.95rem" }}>
+              Visão a longo prazo do projeto: várias estações ao longo do mesmo
+              curso de água, a transmitir para um único portal, capazes de
+              ajudar a localizar geograficamente a origem de uma descarga
+              poluente.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -275,8 +291,9 @@ export default function EstacaoPage() {
         }
         description="Esquemas eletrónicos, firmware, ficheiros de impressão 3D e configuração de servidor — está tudo disponível para qualquer escola ou comunidade replicar a estação."
         photo={{
-          alt: "Montagem da estação no Ribalab",
-          caption: "montagem no Ribalab",
+          src: "/estacao/caixa-principal.png",
+          alt: "Caixa da estação Guarda-Rios impressa em 3D em filamento ASA",
+          caption: "Caixa Principal",
         }}
         actions={
           <>
