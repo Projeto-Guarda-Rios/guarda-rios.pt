@@ -132,7 +132,6 @@ export default function Home() {
               <PhotoFrame
                 src="/guarda-rios/equipa.webp"
                 alt="Estação Guarda-Rios montada, com o AquaNode e a caixa impressa em 3D"
-                caption="estação montada"
                 ratio="5/6"
                 duotone
                 sizes="(max-width: 1080px) 100vw, 480px"
