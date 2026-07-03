@@ -8,6 +8,7 @@ import {
   Button,
 } from "@/content/ui";
 import { LINKS } from "@/content/site-config";
+import { PcbSideShowcase } from "./pcb-side-showcase";
 
 export const metadata: Metadata = {
   title: "Estação",
@@ -126,6 +127,8 @@ export default function EstacaoPage() {
             }
             lead="Isolar a aquisição de sensores num chip dedicado de consumo ultra-baixo mantém o orçamento energético no mínimo — e permite evoluir cada placa sem tocar na outra."
           />
+
+          <PcbSideShowcase />
 
           <div className="spec-grid">
             <div className="card spec">

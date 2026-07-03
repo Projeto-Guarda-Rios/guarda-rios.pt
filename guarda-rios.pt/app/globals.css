@@ -1129,6 +1129,80 @@ em {
   text-align: right;
 }
 
+/* ---------- station PCB render ---------- */
+.pcb-side-block {
+  margin-top: 44px;
+}
+.pcb-side-controls {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  width: max-content;
+  margin: 0 auto;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--surface-sunk);
+}
+.pcb-side-controls button {
+  min-width: 84px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  padding: 11px 16px;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.pcb-side-controls button:hover {
+  color: var(--ink);
+}
+.pcb-side-controls button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+.pcb-render-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.14fr);
+  gap: 18px;
+  align-items: center;
+  width: min(1280px, calc(100vw - 72px));
+  margin: 26px 50% 0;
+  transform: translateX(-50%);
+}
+.pcb-render-showcase figure {
+  min-width: 0;
+  transition: transform 0.36s cubic-bezier(0.2, 0.7, 0.3, 1);
+  will-change: transform;
+}
+.pcb-render-showcase figure:first-child {
+  transform: rotate(-2deg) scale(1.02);
+}
+.pcb-render-showcase figure:last-child {
+  transform: rotate(2deg) scale(1.04);
+}
+.pcb-render-showcase figure:first-child:hover {
+  transform: rotate(-2deg) scale(1.09);
+}
+.pcb-render-showcase figure:last-child:hover {
+  transform: rotate(2deg) scale(1.11);
+}
+.pcb-render-showcase img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 24px 28px rgba(14, 34, 41, 0.16));
+}
+.dark .pcb-render-showcase img {
+  filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.34));
+}
+
 /* ---------- section-entry cards (home) ---------- */
 .entry-grid {
   display: grid;
@@ -1776,6 +1850,31 @@ em {
   }
   .photo-row {
     grid-template-columns: 1fr 1fr;
+  }
+  .pcb-side-block {
+    margin-top: 42px;
+  }
+  .pcb-side-controls {
+    width: 100%;
+    max-width: 300px;
+  }
+  .pcb-side-controls button {
+    flex: 1;
+    min-width: 0;
+  }
+  .pcb-render-showcase {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: calc(100vw - 32px);
+    margin-top: 26px;
+  }
+  .pcb-render-showcase figure:first-child,
+  .pcb-render-showcase figure:last-child {
+    transform: scale(1.02);
+  }
+  .pcb-render-showcase figure:first-child:hover,
+  .pcb-render-showcase figure:last-child:hover {
+    transform: scale(1.06);
   }
   .conc,
   .conc:nth-child(even) {
