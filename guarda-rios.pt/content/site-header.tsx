@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NAV_ITEMS, LINKS } from "./site-config";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
@@ -20,10 +20,38 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Close the mobile menu whenever the route changes.
+  // Flag set while a browser back/forward is in flight, so the next route
+  // change can be told apart from a fresh forward navigation.
+  const isPopNavRef = useRef(false);
+  useEffect(() => {
+    const onPopState = () => {
+      isPopNavRef.current = true;
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  // On navigation, close the mobile menu. For forward navigation, land at the
+  // top of the new page — mobile browsers otherwise keep the previous scroll
+  // offset. For back/forward, leave the restored scroll position untouched.
   useEffect(() => {
     setOpen(false);
+    if (isPopNavRef.current) {
+      isPopNavRef.current = false;
+      return;
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
   }, [pathname]);
+
+  // Freeze the page behind the mobile menu so it can't scroll underneath.
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
 
   return (
     <header className="site-header">

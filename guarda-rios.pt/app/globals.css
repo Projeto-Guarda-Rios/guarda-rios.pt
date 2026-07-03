@@ -278,6 +278,8 @@ em {
   overflow: hidden;
   isolation: isolate;
   box-shadow: var(--shadow);
+  /* Let the caption react to the frame's rendered width, not the viewport. */
+  container-type: inline-size;
 }
 /* real image fills the frame */
 .photo img {
@@ -355,6 +357,14 @@ em {
     rgba(14, 34, 41, 0.55),
     rgba(14, 34, 41, 0.45)
   );
+}
+/* When the frame is rendered small (e.g. two-up photo rows on phones) the
+   caption pill would cover too much of the image — drop it until there's room
+   to carry it comfortably. */
+@container (max-width: 250px) {
+  .photo .ph-cap {
+    display: none;
+  }
 }
 .photo .ph-cap::before {
   content: "";
@@ -498,15 +508,36 @@ em {
   display: none;
 }
 
-/* mobile menu panel */
+/* mobile menu panel — a fixed, self-scrolling sheet anchored below the bar so
+   it is always shown in full regardless of page scroll or the browser chrome
+   sliding in and out. */
 .mobile-menu {
   display: none;
+  position: fixed;
+  top: 82px;
+  left: 0;
+  right: 0;
+  /* Explicit height (not `bottom: 0`): the header's backdrop-filter makes it
+     the containing block for this fixed element, and its box is only the bar's
+     height — so anchor to the viewport height directly instead. */
+  height: calc(100vh - 82px);
+  height: calc(100dvh - 82px);
+  z-index: 55;
   border-top: 1px solid var(--line-2);
   background: var(--header);
   backdrop-filter: blur(16px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 .mobile-menu.open {
   display: block;
+}
+.mobile-menu > .wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-bottom: calc(22px + env(safe-area-inset-bottom));
 }
 .mobile-menu ul {
   list-style: none;
@@ -514,7 +545,9 @@ em {
   gap: 4px;
   padding: 16px 0 22px;
 }
-.mobile-menu a {
+/* Scoped to the nav list so it doesn't override the CTA button's own colors
+   (the button is an <a> too, and this rule was forcing dark-on-dark text). */
+.mobile-menu ul a {
   display: block;
   font-size: 16px;
   font-weight: 500;
@@ -522,13 +555,14 @@ em {
   padding: 12px 4px;
   border-bottom: 1px solid var(--line-2);
 }
-.mobile-menu a.active {
+.mobile-menu ul a.active {
   color: var(--blue);
 }
 .mobile-menu .btn {
-  margin-top: 18px;
+  margin-top: auto;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 16px 22px;
 }
 
 /* ---------- hero ---------- */
@@ -2135,12 +2169,13 @@ em {
   transform: rotate(180deg);
 }
 @media (max-width: 720px) {
+  /* On touch screens the horizontal swipe replaces the arrows, so drop them
+     and reclaim the side gutters to show the photo as large as possible. */
   .lightbox-nav {
-    width: 42px;
-    height: 42px;
+    display: none;
   }
   .lightbox-stage {
-    padding: 52px 44px 60px;
+    padding: 52px 12px 56px;
   }
   /* On phones the zoom hint should always read as tappable. */
   .photo-zoom-badge {
