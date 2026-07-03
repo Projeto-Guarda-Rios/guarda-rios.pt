@@ -111,30 +111,13 @@ export default function Home() {
 
             <div className="hero-figure">
               <PhotoFrame
-                src="/estacao/estacao-montada.jpg"
+                src="/guarda-rios/equipa.webp"
                 alt="Estação Guarda-Rios montada, com o AquaNode e a caixa impressa em 3D"
                 caption="estação montada"
                 ratio="5/6"
                 duotone
                 sizes="(max-width: 1080px) 100vw, 480px"
               />
-              <div className="hero-data">
-                <div className="hd-top">
-                  <span className="dot" /> Exemplo · Estação-piloto
-                </div>
-                <div className="hd-row">
-                  <span className="hd-k">Temperatura</span>
-                  <span className="hd-v tnum">
-                    14,8<span>ºC</span>
-                  </span>
-                </div>
-                <div className="hd-row">
-                  <span className="hd-k">Turbidez</span>
-                  <span className="hd-v tnum">
-                    3<span>NTU</span>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
