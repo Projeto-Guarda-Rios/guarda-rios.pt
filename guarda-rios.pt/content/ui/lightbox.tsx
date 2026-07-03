@@ -9,7 +9,6 @@ import {
   useMemo,
   useRef,
   useState,
-  type CSSProperties,
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
@@ -50,9 +49,6 @@ export function useLightbox(): LightboxController {
 
 // How far a touch must travel (px) before it counts as a swipe.
 const SWIPE_THRESHOLD = 48;
-// Fallback frame ratio while the real image is still loading, so `fill`
-// always has a sized parent and there is no zero-height flash.
-const FALLBACK_RATIO = 3 / 2;
 
 interface LightboxState {
   images: LightboxImage[];
@@ -67,8 +63,6 @@ interface LightboxState {
 export function LightboxProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
   const [state, setState] = useState<LightboxState | null>(null);
-  // Natural aspect ratio of the current image, measured on load.
-  const [ratio, setRatio] = useState<number | null>(null);
 
   // Element focused before opening, restored on close for keyboard users.
   const lastFocusedRef = useRef<HTMLElement | null>(null);
@@ -80,14 +74,12 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
   const open = useCallback((images: LightboxImage[], index: number) => {
     if (images.length === 0) return;
     lastFocusedRef.current = document.activeElement as HTMLElement | null;
-    setRatio(null);
     setState({ images, index: Math.max(0, Math.min(index, images.length - 1)) });
   }, []);
 
   const close = useCallback(() => setState(null), []);
 
   const step = useCallback((delta: number) => {
-    setRatio(null);
     setState((current) => {
       if (!current) return current;
       const count = current.images.length;
@@ -169,11 +161,20 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
   );
 
   const current = state?.images[state.index];
+  // Neighbours to warm the browser cache with, so navigation shows the next
+  // photo instantly instead of blanking while it downloads.
+  const neighbours =
+    state && hasMultiple
+      ? [
+          state.images[(state.index + 1) % state.images.length],
+          state.images[(state.index - 1 + state.images.length) % state.images.length],
+        ]
+      : [];
 
   return (
     <LightboxContext.Provider value={controller}>
       {children}
-      {mounted && isOpen && current
+      {mounted && isOpen && state && current
         ? createPortal(
             <div
               className="lightbox"
@@ -199,67 +200,52 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
                   if (Math.abs(deltaX) > SWIPE_THRESHOLD) step(deltaX < 0 ? 1 : -1);
                 }}
               >
-                <div className="lightbox-topbar">
+                {/* Controls are anchored to the (fixed-size) dialog, never to
+                    the photo — so their positions stay put across images. */}
+                <button
+                  type="button"
+                  className="lightbox-close"
+                  onClick={close}
+                  aria-label="Fechar"
+                >
+                  <CloseIcon />
+                </button>
+
+                {hasMultiple ? (
                   <button
                     type="button"
-                    className="lightbox-close"
-                    onClick={close}
-                    aria-label="Fechar"
+                    className="lightbox-nav lightbox-nav--prev"
+                    onClick={() => step(-1)}
+                    aria-label="Fotografia anterior"
                   >
-                    <CloseIcon />
+                    <ChevronIcon />
                   </button>
-                </div>
+                ) : null}
 
                 <div className="lightbox-stage">
-                  {hasMultiple ? (
-                    <button
-                      type="button"
-                      className="lightbox-nav lightbox-nav--prev"
-                      onClick={() => step(-1)}
-                      aria-label="Fotografia anterior"
-                    >
-                      <ChevronIcon />
-                    </button>
-                  ) : null}
-
                   <figure className="lightbox-figure">
-                    <div
-                      className="lightbox-frame"
-                      style={
-                        {
-                          "--lb-ar": String(ratio ?? FALLBACK_RATIO),
-                        } as CSSProperties
-                      }
-                    >
-                      <Image
-                        key={current.src}
-                        src={current.src}
-                        alt={current.alt}
-                        fill
-                        sizes="92vw"
-                        priority
-                        className="lightbox-img"
-                        onLoad={(event) => {
-                          const img = event.currentTarget;
-                          if (img.naturalWidth && img.naturalHeight) {
-                            setRatio(img.naturalWidth / img.naturalHeight);
-                          }
-                        }}
-                      />
-                    </div>
+                    <Image
+                      key={current.src}
+                      src={current.src}
+                      alt={current.alt}
+                      fill
+                      sizes="90vw"
+                      priority
+                      className="lightbox-img"
+                    />
                   </figure>
-
-                  {hasMultiple ? (
-                    <button
-                      type="button"
-                      className="lightbox-nav lightbox-nav--next"
-                      onClick={() => step(1)}
-                      aria-label="Fotografia seguinte"
-                    >
-                      <ChevronIcon />
-                    </button>
-                  ) : null}
                 </div>
+
+                {hasMultiple ? (
+                  <button
+                    type="button"
+                    className="lightbox-nav lightbox-nav--next"
+                    onClick={() => step(1)}
+                    aria-label="Fotografia seguinte"
+                  >
+                    <ChevronIcon />
+                  </button>
+                ) : null}
 
                 {current.caption || hasMultiple ? (
                   <div className="lightbox-meta">
@@ -274,6 +260,21 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
                   </div>
                 ) : null}
               </div>
+
+              {/* Off-screen prefetch of the adjacent photos. */}
+              {neighbours.map((img) =>
+                img ? (
+                  <Image
+                    key={`preload-${img.src}`}
+                    src={img.src}
+                    alt=""
+                    aria-hidden
+                    fill
+                    sizes="90vw"
+                    className="lightbox-preload"
+                  />
+                ) : null,
+              )}
             </div>,
             document.body,
           )
