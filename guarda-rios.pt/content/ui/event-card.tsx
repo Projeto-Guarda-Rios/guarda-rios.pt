@@ -6,6 +6,10 @@ export interface EventPhoto {
   src?: string;
   alt: string;
   caption?: string;
+  /** Crop anchor (CSS `object-position`), e.g. `"center top"` or `"50% 20%"`. */
+  focal?: string;
+  /** Extra zoom as a percentage (`100` = none, `130` = 130%). */
+  zoom?: number;
 }
 
 interface EventCardProps {
@@ -59,6 +63,8 @@ export function EventCard({
                 src={photo.src}
                 alt={photo.alt}
                 caption={photo.caption}
+                focal={photo.focal}
+                zoom={photo.zoom}
                 ratio="4/3"
                 sizes="(max-width: 720px) 50vw, 25vw"
                 gallery={gallery}

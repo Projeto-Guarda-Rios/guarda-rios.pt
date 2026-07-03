@@ -2,6 +2,10 @@ export interface ContestPhoto {
   src: string;
   alt: string;
   caption?: string;
+  /** Crop anchor (CSS `object-position`), e.g. `"center top"` or `"50% 20%"`. */
+  focal?: string;
+  /** Extra zoom as a percentage (`100` = none, `130` = 130%). */
+  zoom?: number;
 }
 
 export interface ContestItem {

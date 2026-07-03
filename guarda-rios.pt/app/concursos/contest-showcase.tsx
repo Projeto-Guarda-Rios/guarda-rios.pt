@@ -215,6 +215,8 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
                 src={photo.src}
                 alt={photo.alt}
                 caption={photo.caption}
+                focal={photo.focal}
+                zoom={photo.zoom}
                 ratio="4/3"
                 sizes="(max-width: 720px) 78vw, 31vw"
                 gallery={photos}

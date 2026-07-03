@@ -14,6 +14,21 @@ interface PhotoFrameProps {
   duotone?: boolean;
   /** Fit the image with `contain` + padding (useful for logos on a plate). */
   contain?: boolean;
+  /**
+   * Where the crop is anchored inside the frame — a CSS `object-position`
+   * value. Because photos are cover-cropped, this shifts which part stays
+   * visible: `"center top"` keeps the top, `"center bottom"` the bottom,
+   * `"left"`/`"right"` the sides, or fine-tune with percentages like
+   * `"50% 20%"` (0% = top/left, 100% = bottom/right). Defaults to centered.
+   */
+  focal?: string;
+  /**
+   * Extra zoom into the photo, as a percentage. `100` (default) means no zoom;
+   * `130` zooms in to 130%, cropping tighter. The zoom pivots around the
+   * `focal` point, so pair the two to frame a subject (e.g. `focal="center top"`
+   * + `zoom={140}`). Values below 100 are ignored (they'd expose the frame).
+   */
+  zoom?: number;
   /** next/image `sizes` hint for responsive loading. */
   sizes?: string;
   /**
@@ -40,6 +55,8 @@ export function PhotoFrame({
   ratio = "4/5",
   duotone = false,
   contain = false,
+  focal,
+  zoom,
   sizes = "(max-width: 900px) 100vw, 50vw",
   gallery,
   galleryIndex,
@@ -60,10 +77,23 @@ export function PhotoFrame({
 
   const style: CSSProperties = { aspectRatio: ratio };
 
+  // Zoom scales the image up around the focal anchor; the frame's
+  // `overflow: hidden` clips whatever spills past its edges.
+  const scaled = typeof zoom === "number" && zoom > 100;
+  const imgStyle: CSSProperties | undefined =
+    focal || scaled
+      ? {
+          ...(focal ? { objectPosition: focal } : null),
+          ...(scaled
+            ? { transform: `scale(${zoom / 100})`, transformOrigin: focal ?? "center" }
+            : null),
+        }
+      : undefined;
+
   return (
     <figure className={classes} style={style} role="img" aria-label={alt}>
       {src ? (
-        <Image src={src} alt={alt} fill sizes={sizes} />
+        <Image src={src} alt={alt} fill sizes={sizes} style={imgStyle} />
       ) : (
         <span className="ph-center" aria-hidden>
           <svg viewBox="0 0 48 48">

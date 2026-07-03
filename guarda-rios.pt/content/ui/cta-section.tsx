@@ -9,7 +9,13 @@ interface CTASectionProps {
   description: ReactNode;
   /** Buttons / links, typically <Button /> elements. */
   actions?: ReactNode;
-  photo?: { src?: string; alt: string; caption?: string };
+  photo?: {
+    src?: string;
+    alt: string;
+    caption?: string;
+    focal?: string;
+    zoom?: number;
+  };
 }
 
 /**
@@ -31,6 +37,8 @@ export function CTASection({
               src={photo?.src}
               alt={photo?.alt ?? "Equipa do Projeto Guarda-Rios"}
               caption={photo?.caption ?? "a equipa no Ribalab"}
+              focal={photo?.focal}
+              zoom={photo?.zoom}
               ratio="4/3"
               duotone
             />

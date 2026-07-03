@@ -15,16 +15,31 @@ import {
 } from "@/content/ui";
 import { LINKS } from "@/content/site-config";
 
+interface Entry {
+  href: string;
+  kicker: string;
+  title: string;
+  teaser: string;
+  photo: string;
+  /** Crop anchor (CSS `object-position`), e.g. `"center top"` or `"50% 20%"`. */
+  focal?: string;
+  /** Extra zoom as a percentage (`100` = none, `130` = 130%). */
+  zoom?: number;
+}
+
 /** Cards that lead visitors into each section of the site. */
-const ENTRIES = [
+const ENTRIES: Entry[] = [
   {
     href: "/ribalab",
     kicker: "01 · Ribalab",
     title: "O nosso hackerspace",
     teaser:
       "O espaço maker do Grupo Ribadouro onde os alunos desenham e constroem cada estação.",
-    photo: "/ribalab/equipa-bancada.jpg",
-    caption: "bancada técnica",
+    photo: "/ribalab/ribalab-colab.webp",
+    // Ajusta o enquadramento: "center top", "center bottom", "left", "50% 20%"…
+    focal: "top",
+    // Aproxima a imagem: 100 = sem zoom, 130 = 130%…
+    zoom: 100,
   },
   {
     href: "/estacao",
@@ -32,8 +47,9 @@ const ENTRIES = [
     title: "Tecnologia aberta",
     teaser:
       "Solar, modular e replicável: do sensor submerso à transmissão por rede móvel NB-IoT.",
-    photo: "/estacao/caixa-pcb.jpg",
-    caption: "placa principal",
+    photo: "/estacao/PGR - PCB.png",
+    focal: "center",
+    zoom: 110,
   },
   {
     href: "/divulgacao",
@@ -41,17 +57,19 @@ const ENTRIES = [
     title: "Levamos os rios ao público",
     teaser:
       "GreenFest, hackathons e encontros onde partilhamos o projeto com a comunidade.",
-    photo: "/divulgacao/greenfest-2025/greenfest-1.jpg",
-    caption: "GreenFest 2025",
+    photo: "/divulgacao/greenfest-2024/greenfest-2024-3.jpg",
+    focal: "50% 30%",
+    zoom: 100,
   },
   {
     href: "/concursos",
     kicker: "04 · Concursos",
-    title: "Concurso Guarda-Rios",
+    title: "Concursos Guarda-Rios",
     teaser:
       "O desafio STEM que lançámos às escolas — e as distinções que o projeto já conquistou.",
-    photo: "/concursos/atlantico-junior-2023/aj-1.jpg",
-    caption: "Atlântico Júnior",
+    photo: "/concursos/i-fest-2026/iFest-3.jpg",
+    focal: "center",
+    zoom: 100,
   },
   {
     href: "/parcerias",
@@ -59,8 +77,9 @@ const ENTRIES = [
     title: "Quem caminha connosco",
     teaser:
       "Instituições que apoiam e orientam o projeto, da engenharia à gestão da água.",
-    photo: "/ribalab/calibracao-sensor.jpg",
-    caption: "calibração de sensores",
+    photo: "/ribalab/ribalab-team-guarda-rios.jpg",
+    focal: "center",
+    zoom: 100,
   },
 ];
 
@@ -259,8 +278,9 @@ export default function Home() {
               <Link key={entry.href} href={entry.href} className="entry-card">
                 <PhotoFrame
                   src={entry.photo}
-                  alt={entry.caption}
-                  caption={entry.caption}
+                  alt={entry.title}
+                  focal={entry.focal}
+                  zoom={entry.zoom}
                   ratio="16/10"
                   sizes="(max-width: 720px) 100vw, (max-width: 1080px) 50vw, 380px"
                 />
