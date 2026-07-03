@@ -184,7 +184,7 @@ export default function EstacaoPage() {
                 </li>
                 <li>
                   <span className="k">Energia</span>
-                  <span className="v">Solar + 2× 18650</span>
+                  <span className="v">Solar + 18650</span>
                 </li>
                 <li>
                   <span className="k">Segurança</span>

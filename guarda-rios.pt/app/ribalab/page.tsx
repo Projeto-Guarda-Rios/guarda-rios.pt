@@ -7,7 +7,6 @@ import {
   CTASection,
   Button,
 } from "@/content/ui";
-import { LINKS } from "@/content/site-config";
 
 export const metadata: Metadata = {
   title: "Ribalab",
@@ -18,23 +17,23 @@ export const metadata: Metadata = {
 const MAKING = [
   {
     n: "01",
-    title: "Desenho e montagem de PCB",
-    text: "Da esquemática à soldadura: as placas AquaNode e principal são desenhadas, produzidas e montadas à mão pelos alunos.",
+    title: "Tecnologia e Engenharia",
+    text: "Desenvolvimento de soluções eletrónicas, programação, modelação 3D e prototipagem para dar vida a novas ideias.",
   },
   {
     n: "02",
-    title: "Impressão 3D",
-    text: "Caixas e compartimentos modelados em Fusion 360 e impressos numa Bambu Lab P1S em filamento ASA, resistente a radiação UV, chuva e temperaturas extremas.",
+    title: "Ciência e Investigação",
+    text: "Estudo dos ecossistemas, recolha e análise de dados ambientais e desenvolvimento de projetos científicos em diferentes áreas.",
   },
   {
     n: "03",
-    title: "Firmware",
-    text: "Código bare-metal em C para o STM32 e firmware para o ESP32 — com um programador de baixo custo feito a partir de um Arduino Nano.",
+    title: "Inovação e Colaboração",
+    text: "Projetos desenvolvidos por equipas multidisciplinares, promovendo a partilha de conhecimento e a aprendizagem entre alunos e parceiros.",
   },
   {
     n: "04",
-    title: "Testes e estanquidade",
-    text: "Bancada onde se validam leituras, consumo energético e isolamento à água antes de avançar para testes no exterior.",
+    title: "Testes e Impacto",
+    text: "Validação de protótipos, trabalho de campo e implementação de soluções que respondem a desafios reais da comunidade.",
   },
 ];
 
@@ -43,13 +42,13 @@ export default function RibalabPage() {
     <>
       <section className="page-hero">
         <div className="wrap">
-          <Eyebrow>Hackerspace · Grupo Ribadouro</Eyebrow>
+          <Eyebrow>Investigação e criação · Grupo Ribadouro</Eyebrow>
           <h1>
             <em>Ribalab</em>
           </h1>
           <p className="lead">
-            O espaço maker onde as estações Guarda-Rios ganham forma — da ideia
-            ao protótipo, tudo é feito pelos alunos.
+            O espaço de investigação e desenvolvimento do Projeto Guarda-Rios, onde tudo
+            é feito pelos alunos.
           </p>
         </div>
       </section>
@@ -79,24 +78,24 @@ export default function RibalabPage() {
           <div className="split-grid">
             <div className="prose">
               <p>
-                O <b>Ribalab</b> é o hackerspace do Grupo Ribadouro — um espaço
-                maker onde os alunos passam das ideias às mãos na massa. É aqui
-                que o Guarda-Rios acontece: desenham-se as placas de circuito,
-                imprimem-se as caixas em 3D, escreve-se o firmware e testam-se as
-                estações antes dos ensaios de campo.
+                O <b>RibaLab</b> é o laboratório de inovação do Grupo Ribadouro,
+                um espaço onde os alunos transformam ideias em projetos.
+                Aqui, os alunos podem por em prática o que sabem, e aprenderem
+                com situções reais em diferentes contextos, através de investigação
+                e produção ativa.
               </p>
               <p>
-                Mais do que uma oficina, é um ambiente de{" "}
-                <b>trabalho colaborativo e multidisciplinar</b>, onde cada aluno
-                contribui com os seus conhecimentos e interesses — da eletrónica
-                ao design, da programação à ciência ambiental — para atingir
-                objetivos comuns.
+                Mais do que um laboratório, o RibaLab é um {""}
+                <b>ambiente de trabalho colaborativo e multidisciplinar</b>, onde
+                diferentes áreas do conhecimento se cruzam. Juntanto a ciência com
+                a eletrotécnica os alunos criam ligações através de projetos entre 
+                as varias disciplinas de forma interativa
               </p>
               <p>
-                Esta é também a raiz da filosofia open-source do projeto: aquilo
-                que aqui se aprende e constrói é documentado e partilhado, para
-                que qualquer escola ou comunidade possa replicar o mesmo
-                percurso.
+                O espírito do RibaLab assenta no desenvolvimento de projetos que sejam
+                do interesse dos alunos e favoreçam o seu desenvolvimento pessoal.
+                Esta abordagem incentiva a autonomia e a capacidade de colocar em prática
+                os conhecimentos dos alunos.
               </p>
             </div>
 
@@ -132,7 +131,7 @@ export default function RibalabPage() {
                 O que se faz <em>aqui</em>
               </>
             }
-            lead="Cada estação atravessa o Ribalab de ponta a ponta — da placa nua ao teste de estanquidade."
+            lead="O RibaLab é um espaço de inovação e aprendizagem onde os alunos transformam as ideias em projetos nas áreas da ciência, tecnologia e ambiente."
           />
 
           <div className="split-grid">
@@ -200,7 +199,8 @@ export default function RibalabPage() {
             Constrói connosco no <em>Ribalab.</em>
           </>
         }
-        description="Todo o hardware, firmware e ficheiros de impressão estão abertos. Explora, replica e contribui — a começar pelo repositório do projeto."
+        description="Junta-te ao RibaLab, desenvolve as tuas competências e transforma ideias em projetos.
+        Aprende, cria e partilha o teu conhecimento, tal como fazemos o Guarda-Rios e as outras iniciativas."
         photo={{
           src: "/ribalab/ribalab-team-guarda-rios.jpg",
           alt: "Alunos do Projeto Guarda-Rios na bancada do Ribalab",
@@ -208,8 +208,8 @@ export default function RibalabPage() {
         }}
         actions={
           <>
-            <Button href={LINKS.github} variant="orange" arrow>
-              Ver no GitHub
+            <Button href="https://ribadouro.com/ribalab/" variant="orange" arrow>
+              Riba+ - RibaLab
             </Button>
             <Button href="/estacao" variant="ghost">
               Conhecer a estação
