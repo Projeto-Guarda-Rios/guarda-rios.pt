@@ -4,6 +4,7 @@ import {
   Eyebrow,
   SectionHeading,
   PhotoFrame,
+  VideoFrame,
   CTASection,
   Button,
 } from "@/content/ui";
@@ -162,17 +163,19 @@ export default function RibalabPage() {
             <PhotoFrame
               src="/estacao/aquanode-pcb.png"
               alt="Desenho da placa AquaNode desenhada no Ribalab"
-              caption="desenho de PCB"
+              caption="Desenho da PCB"
               ratio="4/3"
               sizes="(max-width: 720px) 50vw, 25vw"
             />
-            <PhotoFrame
-              src="/estacao/caixa-3d.jpg"
-              alt="Caixa da estação impressa em 3D em filamento ASA sobre a bancada"
+
+            <VideoFrame 
+              src="/estacao/timelapseCaixa.mp4"
+              alt="Impressão da caixa da estação em 3D em filamento PETG"
               caption="impressão 3D"
               ratio="4/3"
-              sizes="(max-width: 720px) 50vw, 25vw"
-            />
+              autoPlay loop muted
+              className="(max-width: 720px) 50vw, 25vw" />
+
             <PhotoFrame
               src="/ribalab/calibracao-sensor.jpg"
               alt="Aluno a calibrar um sensor de turbidez com solução de referência"

@@ -6,6 +6,7 @@ export { Eyebrow } from "./eyebrow";
 export { SectionHeading } from "./section-heading";
 export { Button } from "./button";
 export { PhotoFrame } from "./photo-frame";
+export { VideoFrame } from "./video-frame";
 export { StatBand, type Stat } from "./stat-band";
 export { Gauge } from "./gauge";
 export { MiniAreaChart, ChartAxis } from "./mini-area-chart";

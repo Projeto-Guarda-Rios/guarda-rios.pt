@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import {
-  Eyebrow,
-  SectionHeading,
+  Eyebrow,  
   PhotoFrame,
-  StatBand,
 } from "@/content/ui";
 
 export const metadata: Metadata = {
@@ -11,29 +9,6 @@ export const metadata: Metadata = {
   description:
     "A missão do Projeto Guarda-Rios: promover a conservação da qualidade da água e dos ecossistemas através da ciência cidadã e de tecnologia aberta.",
 };
-
-const TEAM_MOMENTS = [
-  {
-    src: "/ribalab/equipa-bancada.jpg",
-    alt: "Alunos do Projeto Guarda-Rios a testar eletrónica na bancada do Ribalab",
-    caption: "equipa",
-  },
-  {
-    src: "/ribalab/teste-estanquidade.jpg",
-    alt: "Teste de estanquidade da caixa impressa em 3D dentro de água",
-    caption: "testes",
-  },
-  {
-    src: "/estacao/caixa-3d.jpg",
-    alt: "Caixa da estação impressa em 3D em filamento ASA",
-    caption: "impressão 3D",
-  },
-  {
-    src: "/estacao/estacao-montada.jpg",
-    alt: "Estação Guarda-Rios montada, com o AquaNode e a caixa impressa em 3D",
-    caption: "protótipo",
-  },
-];
 
 export default function SobrePage() {
   return (
@@ -132,81 +107,6 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* ---------- VALORES ---------- */}
-      <StatBand
-        stats={[
-          {
-            value: "2",
-            caption: (
-              <>
-                <strong>Parâmetros confirmados.</strong> Temperatura e turbidez
-                no desenho atual da estação.
-              </>
-            ),
-          },
-          {
-            value: (
-              <>
-                100<em>%</em>
-              </>
-            ),
-            caption: (
-              <>
-                <strong>Open-source.</strong> Hardware, firmware e dados abertos
-                a todos.
-              </>
-            ),
-          },
-          {
-            value: "ODS",
-            caption: (
-              <>
-                <strong>Desenvolvimento sustentável.</strong> Alinhado com os
-                Objetivos da ONU.
-              </>
-            ),
-          },
-        ]}
-      />
-
-      {/* ---------- EQUIPA ---------- */}
-      <section className="section">
-        <div className="wrap">
-          <SectionHeading
-            eyebrow="Quem faz"
-            title={
-              <>
-                A <em>equipa</em>
-              </>
-            }
-            lead="O Guarda-Rios é desenvolvido por alunos do Grupo Ribadouro, com o apoio de professores e especialistas de diferentes áreas científicas. O projeto assenta no trabalho colaborativo, permitindo que cada elemento contribua com os seus conhecimentos e interesses."
-          />
-
-          <p
-            className="lead"
-            style={{ marginTop: 26, maxWidth: "68ch", color: "var(--muted)" }}
-          >
-            Começou no ano letivo de 2022/2023 com uma equipa de quatro alunos
-            do Colégio Ribadouro e cresceu, no ano seguinte, para dezenas de
-            alunos dos três colégios do Grupo Ribadouro. Estes momentos mostram
-            o trabalho colaborativo da equipa: montagem, testes e construção
-            da estação no Ribalab.
-          </p>
-
-          <div className="photo-row" style={{ marginTop: 40 }}>
-            {TEAM_MOMENTS.map((moment) => (
-              <PhotoFrame
-                key={moment.src}
-                src={moment.src}
-                alt={moment.alt}
-                caption={moment.caption}
-                ratio="4/5"
-                sizes="(max-width: 720px) 50vw, 25vw"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

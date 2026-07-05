@@ -9,6 +9,7 @@ import {
 } from "@/content/ui";
 import { LINKS } from "@/content/site-config";
 import { PcbSideShowcase } from "./pcb-side-showcase";
+import { SensorShowcase } from "./sensor-showcase";
 
 export const metadata: Metadata = {
   title: "Estação",
