@@ -21,7 +21,7 @@ const ARCHITECTURE = [
   {
     n: "01",
     title: "Caixa",
-    text: "Invólucro impresso em 3D em filamento ASA, desenhado para proteger a eletrónica junto ao rio e atualmente em validação de estanquidade.",
+    text: "Invólucro impresso em 3D em filamento ASA, desenhado para proteger as componentes eletrónicas junto da água, garantindo-se a sua estanquidade.",
   },
   {
     n: "02",
@@ -36,7 +36,7 @@ const ARCHITECTURE = [
   {
     n: "04",
     title: "Painel solar",
-    text: "Energia autónoma que, com duas baterias 18650 e ciclos de baixo consumo, permite preparar a estação para operação prolongada.",
+    text: "O painel solar carrega uma bateria 18650, que armazena energia para alimentar a estação de forma contínua — mantendo-a em funcionamento durante a noite e em períodos de menor luz solar.",
   },
 ];
 
@@ -51,9 +51,9 @@ export default function EstacaoPage() {
           </h1>
           <p className="lead">
             Concebida e construída pelos alunos no Ribalab: modular, de baixo
-            custo e totalmente replicável. Alimentada a energia solar, mede a
-            água e envia os dados por rede móvel NB-IoT, sem depender de Wi-Fi
-            nem de gateways próprios.
+            custo e totalmente replicável. Alimentada por energia solar, mede
+            parâmetros físico-químicos da água e envia os dados por rede móvel
+            NB-IoT, sem depender de <em>Wi-Fi</em>, nem de gateways próprios.
           </p>
         </div>
       </section>
@@ -62,10 +62,10 @@ export default function EstacaoPage() {
       <section className="section panel-section">
         <div className="wrap">
           <SectionHeading
-            eyebrow="Anatomia"
+            eyebrow="Arquitetura"
             title={
               <>
-                Quatro peças, um <em>sistema</em>
+                Quatro componentes, um <em>sistema</em>
               </>
             }
             lead="A estação organiza-se numa arquitetura de dois níveis que separa a aquisição de dados da comunicação e da gestão de energia — cada nível na sua própria placa, testável e substituível de forma independente."
@@ -137,7 +137,7 @@ export default function EstacaoPage() {
               <h3>AquaNode PCB</h3>
               <p>
                 A placa de interface com os sensores. Um microcontrolador
-                STM32L053R8 executa firmware bare-metal, consulta ambos os
+                STM32L053R8 executa <em>firmware</em> bare-metal, consulta ambos os
                 sensores a cada dois segundos e envia as leituras por RS-485 —
                 imune a ruído em cabos de grande comprimento.
               </p>
@@ -207,7 +207,7 @@ export default function EstacaoPage() {
               à caixa. Aí, o ESP32 sai do modo de hibernação a cada cinco
               minutos, lê os dados mais recentes, ativa o módulo NB-IoT e
               transmite-os para o nosso servidor — voltando de imediato a
-              hibernar. Este ciclo de trabalho inferior a 1% é o que torna
+              hibernar. Este ciclo de trabalho, inferior a 1%, é o que torna
               viável a operação autónoma a energia solar.
             </p>
             <p>
@@ -236,7 +236,8 @@ export default function EstacaoPage() {
               Visão a longo prazo do projeto: várias estações ao longo do mesmo
               curso de água, a transmitir para um único portal, capazes de
               ajudar a localizar geograficamente a origem de uma descarga
-              poluente.
+              poluente. A distância entre estações irá depender da extensão e do
+              caudal do curso de água em monitorização.
             </p>
           </div>
         </div>
@@ -252,7 +253,7 @@ export default function EstacaoPage() {
                 Dois <em>parâmetros</em>
               </>
             }
-            lead="Atualmente medimos temperatura e turbidez — dois indicadores que ajudam a acompanhar características importantes da água. O sistema é modular: pH, oxigénio dissolvido e condutividade podem ser integrados sem alterar a placa principal."
+            lead="Atualmente medimos temperatura e turbidez — dois parâmetros físico-químicos que são indicadores fundamentais para avaliar a qualidade da água. O sistema é modular: pH, oxigénio dissolvido e condutividade podem ser integrados sem alterar a placa principal."
           />
 
           <div className="detail-grid">
@@ -260,11 +261,16 @@ export default function EstacaoPage() {
               <div className="card-body">
                 <h3>Temperatura</h3>
                 <p>
-                  Fator determinante da capacidade da água para conter gases,
-                  como o oxigénio, essenciais aos seres vivos. Os organismos
-                  poiquilotérmicos são muito sensíveis às suas variações. O valor
-                  máximo admissível para consumo humano é de 25 ºC, e registos
-                  elevados podem indicar descargas industriais de água quente.
+                  Fator crítico para a biodiversidade aquática: determina a
+                  capacidade da água em reter gases vitais, como o oxigénio
+                  dissolvido. Sendo os organismos fluviais maioritariamente
+                  poiquilotérmicos (a temperatura corporal varia com a do meio),
+                  tornam-se muito vulneráveis a oscilações térmicas bruscas.
+                  Picos invulgares funcionam como alerta imediato de poluição
+                  térmica, associada a descargas industriais de água quente. No
+                  âmbito do Decreto-Lei n.º 236/98, o Valor Máximo Admissível é
+                  de 25 ºC e o recomendável de 22 ºC; as descargas não devem
+                  alterar a temperatura natural do rio em mais de 1,5 a 3 ºC.
                 </p>
               </div>
             </Card>
@@ -275,9 +281,14 @@ export default function EstacaoPage() {
                 <p>
                   Quantidade de partículas sólidas em suspensão na água. Afeta a
                   penetração da luz solar, prejudicando a fotossíntese e toda a
-                  cadeia alimentar. Níveis elevados podem indicar poluentes,
-                  sendo um bom indicador — ainda que indireto — da qualidade da
-                  água, medido em NTU.
+                  cadeia alimentar. Mede-se em NTU (Unidades Nefelométricas de
+                  Turbidez): para consumo humano, o valor legal é de 1 NTU à
+                  saída das ETA, tolerando-se até 4 NTU na torneira (Decreto-Lei
+                  n.º 69/2023). Nos rios não há valor fixo, mas como referência
+                  ecológica: &lt; 5 NTU indica água muito limpa, 5–25 NTU água
+                  moderadamente clara (comum em rios saudáveis) e &gt; 50 NTU
+                  água muito turva — alerta para arrastamento de terras ou
+                  poluição.
                 </p>
               </div>
             </Card>
