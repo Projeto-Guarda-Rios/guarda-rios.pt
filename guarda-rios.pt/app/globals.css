@@ -294,6 +294,9 @@ em {
   object-fit: contain;
   padding: 26px;
 }
+.photo--transparent {
+  background: transparent;
+}
 .photo::after {
   content: "";
   position: absolute;

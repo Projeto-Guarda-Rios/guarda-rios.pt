@@ -56,8 +56,8 @@ export default function SobrePage() {
                 consciencialização da importância da conservação da qualidade da
                 água e dos ecossistemas naturais utilizando a{" "}
                 <b>ciência cidadã</b> como ferramenta central. Pretendemos
-                envolver comunidades escolares e não escolares e instituições
-                locais na implementação de ações que promovam a sustentabilidade
+                envolver comunidades escolares e não escolares e outras instituições
+                na implementação de ações que promovam a sustentabilidade
                 ambiental, fazendo com que todos assumam um compromisso na
                 promoção de um desenvolvimento sustentável.
               </p>
@@ -80,8 +80,8 @@ export default function SobrePage() {
                 garantindo uma maior validade dos resultados.
               </p>
               <p>
-                O <b>espírito open source</b> é também um significativo elemento
-                diferenciador deste projeto, pretendendo-se disponibilizar na web
+                O <b>espírito <em>open-source</em></b> é também um significativo elemento
+                diferenciador deste projeto, pretendendo-se disponibilizar na <em>web</em>
                 todos os procedimentos associados à sua implementação, além dos
                 dados recolhidos, após a sua validação. Com o Projeto
                 Guarda-Rios pretendemos inspirar outros a replicar, testar e
@@ -92,15 +92,14 @@ export default function SobrePage() {
 
             <aside className="aside-sticky">
               <PhotoFrame
-                src="/ribalab/calibracao-sensor.jpg"
-                alt="Aluno a calibrar um sensor de turbidez com solução de referência"
-                caption="calibração"
+                src="/ribalab/ODS.png"
+                alt="Objetivos do desenvolviimento sustentável"
+                caption="ods.pt"
                 ratio="4/5"
                 duotone
               />
               <p className="pull-quote">
-                Não se protege o que não se <span>mede</span>. Medir é o
-                primeiro passo.
+                Medir para proteger: tecnologia inteligente e ciência cidadã como o primeiro passo para garantir um futuro sustentáveç
               </p>
             </aside>
           </div>

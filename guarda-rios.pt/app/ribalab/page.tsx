@@ -48,8 +48,9 @@ export default function RibalabPage() {
             <em>Ribalab</em>
           </h1>
           <p className="lead">
-            O espaço de investigação e desenvolvimento do Projeto Guarda-Rios, onde tudo
-            é feito pelos alunos.
+            Espaço de inovação ativa que permite capacitar so jovens
+            para o desenvolvimento de projetos científico desenhado,
+            programado e construindo soluções reais.
           </p>
         </div>
       </section>
@@ -81,7 +82,7 @@ export default function RibalabPage() {
               <p>
                 O <b>RibaLab</b> é o laboratório de inovação do Grupo Ribadouro,
                 um espaço onde os alunos transformam ideias em projetos.
-                Aqui, os alunos podem por em prática o que sabem, e aprenderem
+                Aqui, os alunos podem por em prática os seus conhecimentos, e aprenderem
                 com situções reais em diferentes contextos, através de investigação
                 e produção ativa.
               </p>
@@ -104,6 +105,7 @@ export default function RibalabPage() {
               <div
                 className="card"
                 style={{
+                  gap: "10px",
                   display: "grid",
                   placeItems: "center",
                   padding: "56px 40px",
@@ -112,6 +114,13 @@ export default function RibalabPage() {
                 <Image
                   src="/brand/ribalab-logo.png"
                   alt="Ribalab"
+                  width={420}
+                  height={140}
+                  style={{ width: "100%", height: "auto" }}
+                />
+                <Image
+                  src="/ribalab/ribalab-colab.webp"
+                  alt="Ribalab coolab"
                   width={420}
                   height={140}
                   style={{ width: "100%", height: "auto" }}
@@ -129,10 +138,9 @@ export default function RibalabPage() {
             eyebrow="Mãos na massa"
             title={
               <>
-                O que se faz <em>aqui</em>
+                O que se faz no <em>Ribalab</em>
               </>
             }
-            lead="O RibaLab é um espaço de inovação e aprendizagem onde os alunos transformam as ideias em projetos nas áreas da ciência, tecnologia e ambiente."
           />
 
           <div className="split-grid">
@@ -177,16 +185,16 @@ export default function RibalabPage() {
               className="(max-width: 720px) 50vw, 25vw" />
 
             <PhotoFrame
-              src="/ribalab/calibracao-sensor.jpg"
+              src="/ribalab/teste-estanquidade.jpg"
               alt="Aluno a calibrar um sensor de turbidez com solução de referência"
-              caption="calibração"
+              caption="estanquidade"
               ratio="4/3"
               sizes="(max-width: 720px) 50vw, 25vw"
             />
             <PhotoFrame
-              src="/ribalab/teste-estanquidade.jpg"
+              src="/ribalab/Soldagem.jpg"
               alt="Caixa impressa em 3D dentro de água a testar a estanquidade"
-              caption="estanquidade"
+              caption="Soladagem"
               ratio="4/3"
               sizes="(max-width: 720px) 50vw, 25vw"
             />

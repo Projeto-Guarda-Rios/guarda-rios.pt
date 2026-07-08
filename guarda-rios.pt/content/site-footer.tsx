@@ -20,8 +20,7 @@ export function SiteFooter() {
               <span className="name">Projeto Guarda-Rios</span>
             </div>
             <p>
-              Ciência cidadã, aberta e solar, ao serviço da qualidade da água
-              dos rios de Portugal.
+              Tecnologia e ciência cidadã em ação na promoção da sustentabilidade dos ecossistemas fluviais.
             </p>
           </div>
 
@@ -91,7 +90,7 @@ export function SiteFooter() {
           <div className="credit">
             Um projeto de alunos do <strong>Grupo Ribadouro</strong> · Porto
           </div>
-          <div>© {new Date().getFullYear()} · Feito com dados abertos</div>
+          <div>© {new Date().getFullYear()} · Produzido com dados abertos</div>
         </div>
       </div>
     </footer>

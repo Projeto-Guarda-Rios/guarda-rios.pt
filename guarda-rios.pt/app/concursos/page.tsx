@@ -47,7 +47,7 @@ export default function ConcursosPage() {
       </section>
 
       {/* ---------- SOBRE O CONCURSO ---------- */}
-      <section className="section bg-2">
+      <section className="section bg-2" id="NossoConcurso">
         <div className="wrap">
           <SectionHeading
             eyebrow="O concurso"

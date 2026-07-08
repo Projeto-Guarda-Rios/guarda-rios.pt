@@ -104,10 +104,10 @@ export default function ParceriasPage() {
         eyebrow="Juntar-se"
         title={
           <>
-            Quer trabalhar <em>connosco?</em>
+            Tem interesse no nosso projeto?
           </>
         }
-        description="Escolas, autarquias e instituições que queiram acolher testes, validar dados ou apoiar o projeto podem falar connosco."
+        description="Escolas, autarquias e outras instituições que queiram apoiar ou replicar o nosso projeto, podem contactar-nos."
         photo={{
           src: "/ribalab/ribalab-team-guarda-rios.jpg",
           alt: "Equipa Guarda Rios no Ribalab",
@@ -115,7 +115,7 @@ export default function ParceriasPage() {
         actions={
           <>
             <Button href={`mailto:${LINKS.email}`} variant="orange" arrow>
-              Falar connosco
+              Contacte-nos
             </Button>
             <Button href={LINKS.portal} variant="ghost">
               Portal de Dados

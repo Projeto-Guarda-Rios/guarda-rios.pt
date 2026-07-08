@@ -32,9 +32,9 @@ const ENTRIES: Entry[] = [
   {
     href: "/ribalab",
     kicker: "01 · Ribalab",
-    title: "O nosso hackerspace",
+    title: "Um makerspace",
     teaser:
-      "O espaço maker do Grupo Ribadouro onde os alunos desenham e constroem cada estação.",
+      "O Ribalab é um ecossistema de inovação e criatividade tecnológica. Este makerspace é o local onde os projetos científicos passam de conceitos teóricos a soluções reais para o mundo.",
     photo: "/ribalab/ribalab-colab.webp",
     // Ajusta o enquadramento: "center top", "center bottom", "left", "50% 20%"…
     focal: "top",
@@ -46,7 +46,7 @@ const ENTRIES: Entry[] = [
     kicker: "02 · Estação",
     title: "Tecnologia aberta",
     teaser:
-      "Solar, modular e replicável: do sensor submerso à transmissão por rede móvel NB-IoT.",
+      "Estação autónoma, alimentada por energia solar, que mede parâmetros da água com sensores digitais, enviando os dados em tempo real via rede móvel NB-IoT.",
     photo: "/estacao/PGR - PCB.png",
     focal: "center",
     zoom: 110,
@@ -54,9 +54,9 @@ const ENTRIES: Entry[] = [
   {
     href: "/divulgacao",
     kicker: "03 · Divulgação",
-    title: "Levamos os rios ao público",
+    title: "Guarda-Rios em movimento",
     teaser:
-      "GreenFest, hackathons e encontros onde partilhamos o projeto com a comunidade.",
+      "A presença em competições ciêntíficas, apresentações públicas e a promoção de eventos cientificos, permite a partilha e a divulgação do projeto com a comunidade",
     photo: "/divulgacao/greenfest-2024/greenfest-2024-3.jpg",
     focal: "50% 30%",
     zoom: 100,
@@ -64,9 +64,9 @@ const ENTRIES: Entry[] = [
   {
     href: "/concursos",
     kicker: "04 · Concursos",
-    title: "Concursos Guarda-Rios",
+    title: "Desafios científicos",
     teaser:
-      "O desafio STEM que lançámos às escolas — e as distinções que o projeto já conquistou.",
+      "Participar em competições científicas é uma oportunidade de colocar o projeto à prova perante júris de especialistas e realizar a sua divulgação em competições nacionais e internacionais.",
     photo: "/concursos/i-fest-2026/iFest-3.jpg",
     focal: "center",
     zoom: 100,
@@ -76,7 +76,7 @@ const ENTRIES: Entry[] = [
     kicker: "05 · Parcerias",
     title: "Quem caminha connosco",
     teaser:
-      "Instituições que apoiam e orientam o projeto, da engenharia à gestão da água.",
+      "Instituições que apoiam e orientam o projeto, envolvendo empresas municipais, centros de investigação e investigadores de instituições de ensino superior.",
     photo: "/ribalab/ribalab-team-guarda-rios.jpg",
     focal: "center",
     zoom: 100,
@@ -91,7 +91,7 @@ export default function Home() {
         <div className="wrap">
           <div className="hero-grid">
             <div className="hero-copy">
-              <Eyebrow>Ciência cidadã · Rios de Portugal</Eyebrow>
+              <Eyebrow>Sustentabilidade · Rios · Ciência Cidadã  · Open-source ·  Low-cost</Eyebrow>
               <h1>
                 Projeto
                 <br />
@@ -109,8 +109,8 @@ export default function Home() {
                 </span>
               </h1>
               <p className="hero-mission">
-                Estações open-source para monitorizar a qualidade da água dos
-                rios de Portugal com tecnologia acessível e replicável.
+                Tecnologia open-source ao serviço da ciência cidadã na 
+                proteção e monitorização de cursos de água doce em tempo real.
               </p>
               <p className="hero-sub">
                 Um projeto de alunos do Grupo Ribadouro, no Porto — ciência
@@ -130,10 +130,11 @@ export default function Home() {
 
             <div className="hero-figure">
               <PhotoFrame
-                src="/guarda-rios/equipa.webp"
-                alt="Estação Guarda-Rios montada, com o AquaNode e a caixa impressa em 3D"
+                src="/brand/PGR_Logo.png"
+                alt="Logo"
                 ratio="5/6"
-                duotone
+                contain
+                className="photo--transparent"
                 sizes="(max-width: 1080px) 100vw, 480px"
               />
             </div>
@@ -171,8 +172,8 @@ export default function Home() {
             ),
             caption: (
               <>
-                <strong>Open-source.</strong> Esquemas, código e materiais
-                abertos a todos.
+                <strong>Open-source:</strong> Esquemas, código e materiais
+                totalmente desponíveis.
               </>
             ),
           },
@@ -189,8 +190,8 @@ export default function Home() {
             value: "2",
             caption: (
               <>
-                <strong>Parâmetros medidos.</strong> Temperatura e turbidez — e
-                a crescer.
+                <strong>Parâmetros medidos.</strong> Temperatura e turbidez - o ponto de
+                partida.
               </>
             ),
           },
@@ -208,7 +209,7 @@ export default function Home() {
                   Da estação ao <em>portal.</em>
                 </>
               }
-              lead="O fluxo técnico já liga sensores, API REST, InfluxDB, Grafana e o portal público. Os valores abaixo ilustram os parâmetros confirmados: temperatura e turbidez."
+              lead="O fluxo técnico já estabelece ligação entre sensores, API REST, InfluxDB, Grafana e o portal público. Os valores abaixo ilustram os parâmetros confirmados: temperatura e turbidez."
             />
             <LiveTag>Exemplo</LiveTag>
           </div>
@@ -266,10 +267,11 @@ export default function Home() {
             eyebrow="Explorar o projeto"
             title={
               <>
-                Por onde <em>começar</em>
+                O Nosso Percurso: Criar, Competir, Divulgar
               </>
             }
-            lead="Do espaço onde nascem as estações às competições que nos desafiam — percorre cada parte do Guarda-Rios."
+            lead="Do espaço de criação às competições científicas, passando pelas apresentações públicas que permitem a divulgação
+            do projeto. Fique a conhecer todo o percurso!"
           />
 
           <div className="entry-grid">
@@ -303,7 +305,7 @@ export default function Home() {
         eyebrow="Junta-te"
         title={
           <>
-            Traz o Guarda-Rios <em>ao teu rio.</em>
+            implementa o Guarda-Rios <em>no teu rio.</em>
           </>
         }
         description="Escolas, autarquias e comunidades podem replicar a estação, testar o modelo localmente e ajudar a construir uma futura rede aberta de vigilância dos rios."
@@ -314,7 +316,7 @@ export default function Home() {
         }}
         actions={
           <>
-            <Button href="/concursos" variant="orange" arrow>
+            <Button href="/concursos#NossoConcurso" variant="orange" arrow>
               Participar no concurso
             </Button>
             <Button href={LINKS.github} variant="ghost">
