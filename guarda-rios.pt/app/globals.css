@@ -297,6 +297,11 @@ em {
 .photo--transparent {
   background: transparent;
 }
+.photo--plain {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
 .photo::after {
   content: "";
   position: absolute;

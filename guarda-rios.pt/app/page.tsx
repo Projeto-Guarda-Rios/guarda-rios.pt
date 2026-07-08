@@ -128,13 +128,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-figure">
+            <div className="hero-figure w-80">
               <PhotoFrame
                 src="/brand/PGR_Logo.png"
                 alt="Logo"
                 ratio="5/6"
                 contain
-                className="photo--transparent"
+                className="photo--plain"
                 sizes="(max-width: 1080px) 100vw, 480px"
               />
             </div>
