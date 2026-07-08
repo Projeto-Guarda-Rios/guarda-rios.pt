@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Eyebrow,
@@ -15,11 +14,6 @@ import {
   ArrowRight,
 } from "@/content/ui";
 import { LINKS } from "@/content/site-config";
-
-export const metadata: Metadata = {
-  description:
-    "Estações open-source para monitorizar a qualidade da água dos rios de Portugal com tecnologia acessível e replicável.",
-};
 
 interface Entry {
   href: string;
@@ -117,12 +111,6 @@ export default function Home() {
               <p className="hero-mission">
                 Tecnologia open-source ao serviço da ciência cidadã na 
                 proteção e monitorização de cursos de água doce em tempo real.
-              </p>
-              <p className="hero-sub">
-                Um projeto de alunos do Grupo Ribadouro, no Porto — ciência
-                cidadã e tecnologia aberta ao serviço das nossas ribeiras. O
-                sistema já foi validado em laboratório e está preparado para
-                testes de campo com parceiros.
               </p>
               <div className="hero-ctas">
                 <Button href={LINKS.portal} arrow>
