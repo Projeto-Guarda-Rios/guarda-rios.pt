@@ -48,9 +48,9 @@ export default function RibalabPage() {
             <em>Ribalab</em>
           </h1>
           <p className="lead">
-            Espaço de inovação ativa que permite capacitar so jovens
-            para o desenvolvimento de projetos científico desenhado,
-            programado e construindo soluções reais.
+            Espaço de inovação ativa que permite capacitar os jovens
+            para o desenvolvimento de projetos científicos desenhando,
+            programando e construindo soluções reais.
           </p>
         </div>
       </section>
@@ -207,11 +207,10 @@ export default function RibalabPage() {
         eyebrow="Junta-te"
         title={
           <>
-            Constrói connosco no <em>Ribalab.</em>
+            Projeta o amanhã no <em>Ribalab</em>!
           </>
         }
-        description="Junta-te ao RibaLab, desenvolve as tuas competências e transforma ideias em projetos.
-        Aprende, cria e partilha o teu conhecimento, tal como fazemos o Guarda-Rios e as outras iniciativas."
+        description="Junta-te à equipa do Ribalab e desenvolve as tuas competências. Desenvolve o teu potencial enquanto aprendes, crias e encontras soluções inovadoras para problemas do mundo real."
         photo={{
           src: "/ribalab/ribalab-team-guarda-rios.jpg",
           alt: "Alunos do Projeto Guarda-Rios na bancada do Ribalab",

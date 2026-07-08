@@ -99,7 +99,7 @@ export default function SobrePage() {
                 duotone
               />
               <p className="pull-quote">
-                Medir para proteger: tecnologia inteligente e ciência cidadã como o primeiro passo para garantir um futuro sustentáveç
+                Medir para proteger: tecnologia inteligente e ciência cidadã como o primeiro passo para garantir um futuro sustentável.
               </p>
             </aside>
           </div>
