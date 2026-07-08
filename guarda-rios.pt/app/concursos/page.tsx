@@ -33,13 +33,13 @@ export default function ConcursosPage() {
       <section className="section">
         <div className="wrap">
           <SectionHeading
-            eyebrow="Reconhecimento"
+            eyebrow="Desafios científicos"
             title={
               <>
-                Distinções e <em>mostras</em>
+                Participações e <em>Distinções</em>
               </>
             }
-            lead="O projeto tem sido apresentado em palcos de ciência e tecnologia jovem. Seleciona um concurso para ver a respetiva galeria; a secção também roda automaticamente."
+            lead="O projeto tem marcado presença em prestigiados desafios de ciência e tecnologia propostos a jovens do Ensino Secundário. Explore o nosso percurso selecionando cada um dos concursos abaixo para visualizar a respetiva galeria de fotografias."
           />
 
           <ContestShowcase contests={CONTESTS} />
@@ -50,13 +50,13 @@ export default function ConcursosPage() {
       <section className="section bg-2" id="NossoConcurso">
         <div className="wrap">
           <SectionHeading
-            eyebrow="O concurso"
+            eyebrow="O nosso desafio"
             title={
               <>
-                Constrói, mede, <em>partilha</em>
+                Desafio Guarda-Rios: <em>Em Rede pelos Rios</em>
               </>
             }
-            lead="Inspirado no próprio Guarda-Rios, o concurso desafia equipas de alunos a projetar e montar uma estação de qualidade da água — aprendendo eletrónica, programação e ciência ambiental pelo caminho."
+            lead="O Projeto Guarda-Rios nasceu da convicção de que a tecnologia aberta e a ciência cidadã são as ferramentas mais poderosas que temos para proteger os recursos hídricos. Após o desenvolvimento e validação do nosso sistema modular de monitorização ambiental autónomo e open-source, percebeu-se que o verdadeiro impacto não se esgota nos nossos colégios — cresce quando é partilhado!"
           />
 
           <div className="detail-grid">

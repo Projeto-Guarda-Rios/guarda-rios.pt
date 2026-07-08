@@ -48,8 +48,11 @@ export default function ParceriasPage() {
             <em>Parcerias</em>
           </h1>
           <p className="lead">
-            Instituições que apoiam, orientam e potenciam o Guarda-Rios — da
-            engenharia à gestão da água e à investigação ambiental.
+            Ninguém protege o futuro sozinho. Contamos com uma rede sólida de
+            parceiros e instituições de referência que apoiam, orientam e
+            potenciam o Guarda-Rios — unindo esforços desde o desenvolvimento da
+            engenharia à gestão sustentável da água e à investigação ambiental de
+            vanguarda.
           </p>
         </div>
       </section>
@@ -79,10 +82,10 @@ export default function ParceriasPage() {
             eyebrow="Ao nosso lado"
             title={
               <>
-                Três instituições, um mesmo <em>rio</em>
+                Diversos parceiros, <em>a mesma missão</em>
               </>
             }
-            lead="O apoio destas entidades é determinante para o rigor do projeto: ajudam a definir locais de teste, a calibrar os sensores e a validar as leituras face a amostragens de referência."
+            lead="O Guarda-Rios cresce através da colaboração. Conheça as entidades e instituições que apoiam e validam o nosso trabalho, colaborando ativamente nas áreas da engenharia, da gestão de recursos hídricos e da investigação ambiental."
           />
 
           <div className="part-grid">
@@ -101,13 +104,13 @@ export default function ParceriasPage() {
 
       {/* ---------- CTA ---------- */}
       <CTASection
-        eyebrow="Juntar-se"
+        eyebrow="Colaboração"
         title={
           <>
-            Tem interesse no nosso projeto?
+            Quer participar no <em>nosso projeto</em>?
           </>
         }
-        description="Escolas, autarquias e outras instituições que queiram apoiar ou replicar o nosso projeto, podem contactar-nos."
+        description="Estamos sempre à procura de novos horizontes para expandir a nossa rede de proteção ambiental. Se representa uma escola, autarquia ou outra instituição que deseja acolher os nossos testes piloto, validar dados científicos ou apoiar o crescimento do projeto, entre em contacto connosco. Vamos, juntos, proteger os nossos rios."
         photo={{
           src: "/ribalab/ribalab-team-guarda-rios.jpg",
           alt: "Equipa Guarda Rios no Ribalab",
@@ -115,10 +118,10 @@ export default function ParceriasPage() {
         actions={
           <>
             <Button href={`mailto:${LINKS.email}`} variant="orange" arrow>
-              Contacte-nos
+              Mail
             </Button>
-            <Button href={LINKS.portal} variant="ghost">
-              Portal de Dados
+            <Button href={LINKS.instagram} variant="ghost">
+              Instagram
             </Button>
           </>
         }

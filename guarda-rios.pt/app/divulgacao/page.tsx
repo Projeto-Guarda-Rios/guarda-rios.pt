@@ -25,8 +25,13 @@ export default function DivulgacaoPage() {
             <em>Divulgação</em>
           </h1>
           <p className="lead">
-            Levar os rios ao encontro das pessoas: festivais, hackathons e
-            mostras onde partilhamos o projeto e a ciência que o sustenta.
+            O Projeto Guarda-Rios ganha verdadeira força quando ultrapassa as
+            barreiras da escola. Através da nossa participação em competições
+            científicas de prestígio, de apresentações públicas e de uma forte
+            presença digital, partilhamos o nosso projeto com o mundo.
+            Acreditamos que divulgar é educar, mobilizando os cidadãos e
+            inspirando outras escolas a juntarem-se a esta rede de ciência cidadã
+            e proteção ambiental.
           </p>
         </div>
       </section>
@@ -37,7 +42,7 @@ export default function DivulgacaoPage() {
           <EventCard
             title="Hackathon Ciência pelo Ambiente"
             year="2024"
-            description="Participámos no Hackathon Ciência pelo Ambiente, onde equipas desenvolveram, em conjunto, soluções tecnológicas para desafios ambientais reais."
+            description="Dinamizámos um Hackathon de dois dias no Colégio da Trofa, unindo alunos do Grupo Ribadouro na busca por soluções inovadoras para desafios reais. Durante esta maratona científica, os estudantes colocaram à prova as suas competências técnicas e superaram-se no desenvolvimento de capacidades sociais, de trabalho em equipa e de comunicação pública."
             photos={[
               { src: "/divulgacao/hackathon-2024/hackathon-1.jpg", alt: "Equipa no Hackathon Ciência pelo Ambiente 2024", caption: "Hackathon" },
               { src: "/divulgacao/hackathon-2024/hackathon-2.jpg", alt: "Trabalho durante o Hackathon 2024" },
@@ -47,9 +52,9 @@ export default function DivulgacaoPage() {
           />
 
           <EventCard
-            title="GreenFest Serralves"
+            title="GreenFest · Serralves"
             year="2024"
-            description="Apresentámos o Guarda-Rios no GreenFest em Serralves, com uma demonstração ao vivo da recolha de parâmetros físico-químicos e biológicos da água perante o público e convidados."
+            description="Apresentámos o projeto Guarda-Rios no festival de sustentabilidade GreenFest, na Fundação de Serralves. A nossa participação incluiu uma demonstração prática em tempo real, na qual expusemos ao público e a diversos especialistas o processo de monitorização autónoma dos parâmetros físico-químicos da água, reforçando o compromisso do projeto com a divulgação científica."
             photos={[
               { src: "/divulgacao/greenfest-2024/greenfest-2024-1.jpg", alt: "Equipa do Projeto Guarda-Rios no GreenFest Serralves 2024", caption: "GreenFest Serralves" },
               { src: "/divulgacao/greenfest-2024/greenfest-2024-2.jpg", alt: "Demonstração ao vivo do protótipo Guarda-Rios no GreenFest Serralves 2024" },
@@ -59,9 +64,9 @@ export default function DivulgacaoPage() {
           />
 
           <EventCard
-            title="GreenFest Braga · Universidade do Minho"
+            title="GreenFest · Universidade do Minho"
             year="2024"
-            description="Representámos o Guarda-Rios no GreenFest Braga, na Universidade do Minho, um dos maiores eventos de sustentabilidade do país."
+            description="Levámos a nossa engenharia ao ecossistema universitário. Com uma demonstração ao vivo da recolha de parâmetros físico-químicos e biológicos da água, mostrámos de forma prática a estudantes, investigadores e ao público em geral, como o Guarda-Rios aplica tecnologia open-source na monitorização real e rigorosa dos ecossistemas aquáticos."
             wide
             photos={[
               { src: "/divulgacao/greenfest-uminho-2024/greenfest-uminho-1.jpg", alt: "Equipa do Projeto Guarda-Rios a apresentar no GreenFest Braga, Universidade do Minho, 2024", caption: "GreenFest Braga" },
@@ -94,9 +99,9 @@ export default function DivulgacaoPage() {
           />
 
           <EventCard
-            title="GreenFest 2025"
+            title="GreenFest · Serralves"
             year="2025"
-            description="Levámos o Guarda-Rios ao GreenFest, um festival dedicado à sustentabilidade, onde apresentámos os protótipos da estação e o portal de dados ao grande público."
+            description="Regressámos ao GreenFest com uma abordagem de divulgação totalmente renovada. Desta vez, o Guarda-Rios esteve em exposição contínua e prolongada, transformando o nosso espaço num ponto de encontro interativo. Ao longo do evento, fomos explicando em detalhe as especificidades técnicas e ecológicas do projeto a todos os que nos visitaram, aproveitando uma oportunidade única para partilhar o nosso trabalho e trocar ideias com um público incrivelmente diversificado."
             photos={[
               { src: "/divulgacao/greenfest-2025/greenfest-1.jpg", alt: "Guarda-Rios no GreenFest 2025", caption: "GreenFest" },
               { src: "/divulgacao/greenfest-2025/greenfest-2.jpg", alt: "Estação apresentada no GreenFest 2025" },
@@ -114,10 +119,10 @@ export default function DivulgacaoPage() {
             eyebrow="E também"
             title={
               <>
-                Mais <em>momentos</em>
+                Outras <em>iniciativas</em>
               </>
             }
-            lead="Outras ocasiões em que o projeto saiu do laboratório para o encontro com a comunidade. Fotografias a caminho."
+            lead="Outros momentos em que o projeto se encontrou com a comunidade."
           />
 
           <div className="mini-grid">
@@ -161,7 +166,7 @@ export default function DivulgacaoPage() {
         eyebrow="Acompanha-nos"
         title={
           <>
-            Segue o projeto <em>por dentro.</em>
+            Acompanha as nossas <em>dinâmicas.</em>
           </>
         }
         description="Publicamos bastidores, novidades e resultados no Instagram — e todo o trabalho técnico fica aberto no GitHub."
@@ -173,10 +178,10 @@ export default function DivulgacaoPage() {
         actions={
           <>
             <Button href={LINKS.instagram} variant="orange" arrow>
-              Seguir no Instagram
+              Instagram
             </Button>
             <Button href="/concursos" variant="ghost">
-              Ver os concursos
+              Concursos
             </Button>
           </>
         }

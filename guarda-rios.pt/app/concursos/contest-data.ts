@@ -50,7 +50,7 @@ export const CONTESTS: ContestItem[] = [
     name: "Atlântico Júnior",
     year: "2023",
     logo: "/concursos/premio-atlantico-junior-logo.jpg",
-    text: "Mostra de ciência e engenharia para jovens investigadores.",
+    text: "Promovido pela FLAD e Ciência Viva, pretende promover a cultura científica e tecnológica através da valorização do Atlântico como sistema natural e do seu papel na sustentabilidade do planeta e na sociedade.",
     photos: [
       {
         src: "/concursos/atlantico-junior-2023/aj-premios.jpg",
@@ -79,7 +79,7 @@ export const CONTESTS: ContestItem[] = [
     name: "Atlântico Júnior",
     year: "2024",
     logo: "/concursos/premio-atlantico-junior-logo.jpg",
-    text: "Mostra de ciência e engenharia para jovens investigadores.",
+    text: "Promovido pela FLAD e Ciência Viva, pretende promover a cultura científica e tecnológica através da valorização do Atlântico como sistema natural e do seu papel na sustentabilidade do planeta e na sociedade.",
     photos: [
       {
         src: "/concursos/atlantico-junior-2024/atlantico-junior-2024-1.png",
@@ -110,7 +110,7 @@ export const CONTESTS: ContestItem[] = [
     name: "Mostra Nacional de Ciência",
     year: "2025",
     logo: "/concursos/mostra_nacional_de_ciencia_logo.png",
-    text: "Encontro nacional de projetos científicos escolares.",
+    text: "Promovido pela Fundação da Juventude, desafia os jovens a apresentar os projetos científicos desenvolvidos nas escolas, no âmbito do Concurso Nacional para Jovens Cientistas e Investigadores.",
     photos: [
       {
         src: "/concursos/mostra-nacional-2025/Mostra Nacional 3.jpg",
@@ -131,7 +131,7 @@ export const CONTESTS: ContestItem[] = [
     name: "I-Fest",
     year: "2026",
     logo: "/concursos/i-fest-logo.png",
-    text: "Festival internacional de ciência, engenharia, biologia, multimédia e matemática.",
+    text: "O Festival Internacional de Engenharia, Ciência e Tecnologia da Tunísia constitui uma experiência única e educativa, incluindo diversas atividades científicas e culturais, sendo promovido pela ATAST.",
     photos: [
       {
         src: "/concursos/i-fest-2026/iFest-4.jpg",
@@ -171,7 +171,7 @@ export const CONTESTS: ContestItem[] = [
     name: "FAQTOS",
     year: "2025/26",
     logo: "/concursos/faqtos-logo.png",
-    text: "Concurso de projetos tecnológicos do ensino secundário.",
+    text: "Promovido pelo INOV-INESC (Instituto Superior Técnico), este concurso para alunos do Ensino Secundário pretende promover o conhecimento científico associado a campos eletromagnéticos provenientes de fontes de telecomunicações.",
     photos: [],
   },
 ];
