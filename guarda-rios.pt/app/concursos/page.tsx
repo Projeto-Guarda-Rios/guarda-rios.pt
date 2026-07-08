@@ -42,7 +42,9 @@ export default function ConcursosPage() {
             lead="O projeto tem marcado presença em prestigiados desafios de ciência e tecnologia propostos a jovens do Ensino Secundário. Explore o nosso percurso selecionando cada um dos concursos abaixo para visualizar a respetiva galeria de fotografias."
           />
 
-          <ContestShowcase contests={CONTESTS} />
+          {/* Ordem cronológica em contest-data (mais antigo -> mais recente);
+              invertida aqui para mostrar o mais recente primeiro (FAQTOS). */}
+          <ContestShowcase contests={[...CONTESTS].reverse()} />
         </div>
       </section>
 
