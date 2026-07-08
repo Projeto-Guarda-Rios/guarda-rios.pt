@@ -135,7 +135,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="wave-divider" aria-hidden style={{ marginTop: 96 }}>
+        <div className="wave-divider" aria-hidden style={{ marginTop: 20 }}>
           <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
             <path
               d="M0 40 C240 12 480 60 720 42 C960 24 1200 58 1440 34"
@@ -156,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* ---------- O PROJETO (narrativa) ---------- */}
-      <section className="section">
+      <section className="section" style={{ paddingTop: 28 }}>
         <div className="wrap">
           <div className="prose" style={{ maxWidth: "72ch" }}>
             <Eyebrow>O projeto</Eyebrow>

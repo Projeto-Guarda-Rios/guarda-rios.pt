@@ -164,7 +164,7 @@ em {
 
 .section {
   position: relative;
-  padding: 150px 0;
+  padding: 104px 0;
   z-index: 2;
 }
 .lead {
@@ -576,7 +576,7 @@ em {
 /* ---------- hero ---------- */
 .hero {
   position: relative;
-  padding: 104px 0 128px;
+  padding: 96px 0 40px;
   overflow: hidden;
 }
 .hero-grid {
@@ -631,6 +631,7 @@ em {
   gap: 14px;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 36px;
 }
 .hero-figure {
   position: relative;
