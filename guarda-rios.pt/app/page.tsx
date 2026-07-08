@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Eyebrow,
@@ -14,6 +15,11 @@ import {
   ArrowRight,
 } from "@/content/ui";
 import { LINKS } from "@/content/site-config";
+
+export const metadata: Metadata = {
+  description:
+    "Estações open-source para monitorizar a qualidade da água dos rios de Portugal com tecnologia acessível e replicável.",
+};
 
 interface Entry {
   href: string;
@@ -56,7 +62,7 @@ const ENTRIES: Entry[] = [
     kicker: "03 · Divulgação",
     title: "Guarda-Rios em movimento",
     teaser:
-      "A presença em competições ciêntíficas, apresentações públicas e a promoção de eventos cientificos, permite a partilha e a divulgação do projeto com a comunidade",
+      "A presença em competições científicas, apresentações públicas e a promoção de eventos científicos, permite a partilha e divulgação do projeto com a comunidade.",
     photo: "/divulgacao/greenfest-2024/greenfest-2024-3.jpg",
     focal: "50% 30%",
     zoom: 100,
@@ -161,6 +167,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------- O PROJETO (narrativa) ---------- */}
+      <section className="section">
+        <div className="wrap">
+          <div className="prose" style={{ maxWidth: "72ch" }}>
+            <Eyebrow>O projeto</Eyebrow>
+            <h3>Como surgiu?</h3>
+            <p>
+              O Projeto Guarda-Rios foi desenvolvido pela comunidade educativa do
+              Grupo Ribadouro, movido pela vontade e necessidade de apresentar uma
+              resposta inovadora à contaminação das bacias hidrográficas. A missão
+              deste projeto é clara: proteger os recursos hídricos de água doce
+              através da implementação de uma tecnologia acessível e replicável,
+              promovendo o desenvolvimento de uma cidadania ativa.
+            </p>
+            <h3>O que foi realizado?</h3>
+            <p>
+              Foi criado um sistema inteligente e modular de sensorização
+              ambiental capaz de monitorizar a qualidade da água em tempo real. Os
+              dados recolhidos estão disponíveis para consulta pública e gratuita
+              no nosso portal. Juntos, através da ciência cidadã, podemos
+              identificar focos de poluição em tempo útil, agir na defesa dos
+              ecossistemas fluviais e caminhar rumo a um futuro mais sustentável.
+            </p>
+            <h3>O que diferencia o projeto?</h3>
+            <p>
+              Através da implementação de estações de baixo custo e
+              energeticamente autossuficientes (alimentadas a energia solar),
+              realiza-se uma medição de parâmetros físico-químicos fundamentais,
+              cujos dados avaliados são automaticamente enviados via rede móvel
+              (NB-IoT). Defendemos que o conhecimento deve ser livre e acessível.
+              Por isso, o Guarda-Rios é um projeto totalmente open-source.
+              Partilhamos abertamente com a comunidade todos os esquemas de
+              hardware, códigos de programação e ficheiros de impressão 3D,
+              permitindo que qualquer cidadão, escola, investigador ou outra
+              entidade possa replicar as nossas estações.
+            </p>
+            <p className="lead" style={{ marginTop: 8 }}>
+              Explore os dados, replique o projeto e ajude-nos a proteger os
+              nossos rios!
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ---------- STATS ---------- */}
       <StatBand
         stats={[
@@ -173,7 +223,7 @@ export default function Home() {
             caption: (
               <>
                 <strong>Open-source:</strong> Esquemas, código e materiais
-                totalmente desponíveis.
+                totalmente disponíveis.
               </>
             ),
           },
@@ -305,10 +355,10 @@ export default function Home() {
         eyebrow="Junta-te"
         title={
           <>
-            implementa o Guarda-Rios <em>no teu rio.</em>
+            Implementa o Guarda-Rios <em>no teu rio.</em>
           </>
         }
-        description="Escolas, autarquias e comunidades podem replicar a estação, testar o modelo localmente e ajudar a construir uma futura rede aberta de vigilância dos rios."
+        description="Escolas, autarquias ou outras instituições poderão replicar a nossa estação, testar o modelo localmente e contribuir para a construção de uma futura rede aberta de vigilância de cursos de água doce."
         photo={{
           src: "/estacao/rede-nb-iot.jpg",
           alt: "Conceito de rede de estações Guarda-Rios ao longo de um rio, ligadas por NB-IoT",
