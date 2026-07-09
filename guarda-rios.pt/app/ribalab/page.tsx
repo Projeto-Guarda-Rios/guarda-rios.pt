@@ -177,7 +177,7 @@ export default function RibalabPage() {
             />
 
             <VideoFrame 
-              src="/estacao/timelapseCaixa.mp4"
+              src="/estacao/timelapse-caixa.mp4"
               alt="Impressão da caixa da estação em 3D em filamento PETG"
               caption="impressão 3D"
               ratio="4/3"
