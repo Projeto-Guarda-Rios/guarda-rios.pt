@@ -17,7 +17,13 @@ const SCROLL_MS = 3600;
 const RESUME_AFTER_MS = 12000;
 
 export function ContestShowcase({ contests }: ContestShowcaseProps) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  // Feature the most recent contest that actually has photos (skips upcoming
+  // events like FAQTOS, whose gallery is still empty).
+  const initialIndex = Math.max(
+    0,
+    contests.findIndex((contest) => contest.photos.length > 0),
+  );
+  const [selectedIndex, setSelectedIndex] = useState(initialIndex);
 
   const rootRef = useRef<HTMLDivElement>(null);
   const contestRailRef = useRef<HTMLDivElement>(null);
@@ -84,8 +90,15 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
     return () => window.clearInterval(timer);
   }, [contests.length, isAutoplayAllowed]);
 
-  // Keep the active contest in view when the selection changes.
+  // Keep the active contest in view when the selection changes — but not on the
+  // initial mount, so the rail stays at the start (FAQTOS first) and the page
+  // does not jump on load.
+  const railDidMountRef = useRef(false);
   useEffect(() => {
+    if (!railDidMountRef.current) {
+      railDidMountRef.current = true;
+      return;
+    }
     const rail = contestRailRef.current;
     const activeContest = rail?.querySelector<HTMLButtonElement>(
       '[data-active="true"]',
