@@ -215,7 +215,20 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
           }
         />
 
-        {selected.report && (
+        {selected.video ? (
+          <a
+            className="btn btn-primary"
+            href={selected.video}
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{ marginBottom: 20 }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Ver o vídeo
+          </a>
+        ) : selected.report ? (
           <a
             className="btn btn-primary"
             href={selected.report}
@@ -226,7 +239,7 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
             <DownloadIcon />
             Ver o relatório final
           </a>
-        )}
+        ) : null}
 
         <div
           className="contest-photo-scroll"
