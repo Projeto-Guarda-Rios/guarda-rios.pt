@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Eyebrow,
-  SectionHeading,
-  Card,
-  Button,
-  DownloadIcon,
-} from "@/content/ui";
+import { Eyebrow, SectionHeading, Card, Button } from "@/content/ui";
 import { LINKS } from "@/content/site-config";
 
 export const metadata: Metadata = {
@@ -13,8 +7,6 @@ export const metadata: Metadata = {
   description:
     "Como o Guarda-Rios transmite os dados do rio: da comunicação série RS-485 entre AquaNode e caixa, à evolução de LoRa para NB-IoT na ligação à nuvem.",
 };
-
-const REPORT = "/docs/relatorio-final-faqtos-2026.pdf";
 
 export default function RadiofrequenciasPage() {
   return (
@@ -180,17 +172,6 @@ export default function RadiofrequenciasPage() {
               já na 4.ª revisão), a troca de LoRa por NB-IoT foi uma evolução
               natural do hardware, sem qualquer alteração ao sensoriamento.
             </p>
-          </div>
-          <div style={{ marginTop: 36 }}>
-            <a
-              className="btn btn-primary"
-              href={REPORT}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <DownloadIcon />
-              Ver o relatório final (FAQTOS 2026)
-            </a>
           </div>
         </div>
       </section>

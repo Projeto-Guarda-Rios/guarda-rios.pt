@@ -2,13 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import {
-  Medal,
-  PhotoFrame,
-  SectionHeading,
-  DownloadIcon,
-  useLightbox,
-} from "@/content/ui";
+import { Medal, PhotoFrame, SectionHeading, useLightbox } from "@/content/ui";
 import type { ContestItem } from "./contest-data";
 
 interface ContestShowcaseProps {
@@ -215,32 +209,6 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
           }
         />
 
-        {selected.video ? (
-          <a
-            className="btn btn-primary"
-            href={selected.video}
-            target="_blank"
-            rel="noreferrer noopener"
-            style={{ marginBottom: 20 }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-              <path d="M8 5v14l11-7z" />
-            </svg>
-            Ver o vídeo
-          </a>
-        ) : selected.report ? (
-          <a
-            className="btn btn-primary"
-            href={selected.report}
-            target="_blank"
-            rel="noreferrer noopener"
-            style={{ marginBottom: 20 }}
-          >
-            <DownloadIcon />
-            Ver o relatório final
-          </a>
-        ) : null}
-
         <div
           className="contest-photo-scroll"
           ref={galleryRef}
@@ -272,6 +240,54 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
                 galleryIndex={index}
               />
             ))
+          ) : selected.video ? (
+            <a
+              className="contest-photo contest-video-cta"
+              href={selected.video}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={`Ver o vídeo de ${selected.name}`}
+              style={{
+                aspectRatio: "16 / 10",
+                width: "min(90%, 560px)",
+                display: "grid",
+                placeItems: "center",
+                alignContent: "center",
+                gap: "12px",
+                textDecoration: "none",
+                color: "#f3eddf",
+                background: "linear-gradient(135deg, #122b33, #0e2229)",
+                borderRadius: "14px",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <span
+                style={{
+                  display: "grid",
+                  placeItems: "center",
+                  width: 58,
+                  height: 58,
+                  borderRadius: "50%",
+                  background: "var(--orange)",
+                }}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden>
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+              <span
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontStyle: "italic",
+                  fontSize: 20,
+                }}
+              >
+                Ver o vídeo
+              </span>
+              <span style={{ fontSize: 13, opacity: 0.7 }}>
+                FAQTOS 2026 · YouTube
+              </span>
+            </a>
           ) : (
             <PhotoFrame
               className="contest-photo contest-photo--placeholder"
