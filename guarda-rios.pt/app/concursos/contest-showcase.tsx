@@ -2,7 +2,13 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Medal, PhotoFrame, SectionHeading, useLightbox } from "@/content/ui";
+import {
+  Medal,
+  PhotoFrame,
+  SectionHeading,
+  DownloadIcon,
+  useLightbox,
+} from "@/content/ui";
 import type { ContestItem } from "./contest-data";
 
 interface ContestShowcaseProps {
@@ -208,6 +214,19 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
             </>
           }
         />
+
+        {selected.report && (
+          <a
+            className="btn btn-primary"
+            href={selected.report}
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{ marginBottom: 20 }}
+          >
+            <DownloadIcon />
+            Ver o relatório final
+          </a>
+        )}
 
         <div
           className="contest-photo-scroll"

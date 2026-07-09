@@ -14,6 +14,8 @@ export interface ContestItem {
   text: string;
   logo?: string;
   photos: ContestPhoto[];
+  /** Optional final-report PDF (shown as a download in the gallery). */
+  report?: string;
 }
 
 export interface ContestDetail {
@@ -172,6 +174,7 @@ export const CONTESTS: ContestItem[] = [
     year: "2025/26",
     logo: "/concursos/faqtos-logo.png",
     text: "Promovido pelo INOV-INESC (Instituto Superior Técnico), este concurso para alunos do Ensino Secundário pretende promover o conhecimento científico associado a campos eletromagnéticos provenientes de fontes de telecomunicações.",
+    report: "/docs/relatorio-final-faqtos-2026.pdf",
     photos: [],
   },
 ];

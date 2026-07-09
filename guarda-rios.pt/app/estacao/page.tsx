@@ -223,6 +223,11 @@ export default function EstacaoPage() {
               estação pode transmitir em locais onde exista cobertura NB-IoT
               adequada.
             </p>
+            <div style={{ marginTop: 10 }}>
+              <Button href="/radiofrequencias" variant="ghost" arrow>
+                Comunicação por radiofrequências
+              </Button>
+            </div>
           </div>
 
           <div className="photo-row" style={{ marginTop: 52 }}>
