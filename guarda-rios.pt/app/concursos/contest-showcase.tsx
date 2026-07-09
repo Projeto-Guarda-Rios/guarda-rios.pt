@@ -22,6 +22,7 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const contestRailRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
+  const galleryTopRef = useRef<HTMLDivElement>(null);
 
   // Autoplay is suspended while the pointer hovers the showcase (desktop) or
   // for a grace period after any interaction (works for touch and keyboard).
@@ -130,6 +131,9 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
   const handleSelect = (index: number) => {
     registerInteraction();
     setSelectedIndex(index);
+    // Bring the chosen contest's photos into view (user click only — the
+    // automatic rotation calls setSelectedIndex directly and never scrolls).
+    galleryTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -182,7 +186,7 @@ export function ContestShowcase({ contests }: ContestShowcaseProps) {
         })}
       </div>
 
-      <div className="contest-gallery" id="contest-gallery">
+      <div className="contest-gallery" id="contest-gallery" ref={galleryTopRef}>
         <SectionHeading
           eyebrow="Em destaque"
           title={
