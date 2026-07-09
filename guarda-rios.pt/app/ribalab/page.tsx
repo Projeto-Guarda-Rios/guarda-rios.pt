@@ -186,15 +186,42 @@ export default function RibalabPage() {
 
             <PhotoFrame
               src="/ribalab/teste-estanquidade.jpg"
-              alt="Aluno a calibrar um sensor de turbidez com solução de referência"
+              alt="Teste de estanquidade da caixa da estação"
               caption="estanquidade"
               ratio="4/3"
               sizes="(max-width: 720px) 50vw, 25vw"
             />
             <PhotoFrame
               src="/ribalab/Soldagem.jpg"
-              alt="Caixa impressa em 3D dentro de água a testar a estanquidade"
-              caption="Soladagem"
+              alt="Aluno a soldar componentes no Ribalab"
+              caption="soldadura"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+          </div>
+
+          <div className="photo-row" style={{ marginTop: 20 }}>
+            <PhotoFrame
+              src="/ribalab/galeria/ribalab-1.jpg"
+              alt="Alunos a trabalhar no Ribalab"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/ribalab/galeria/ribalab-7.jpg"
+              alt="Desenho e modelação 3D no Ribalab"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/ribalab/galeria/ribalab-13.jpg"
+              alt="Trabalho de eletrónica no Ribalab"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/ribalab/galeria/ribalab-17.jpg"
+              alt="Bancada de trabalho do Ribalab"
               ratio="4/3"
               sizes="(max-width: 720px) 50vw, 25vw"
             />

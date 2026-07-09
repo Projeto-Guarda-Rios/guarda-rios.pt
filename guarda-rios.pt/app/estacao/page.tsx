@@ -138,7 +138,7 @@ export default function EstacaoPage() {
               <p>
                 A placa de interface com os sensores. Um microcontrolador
                 STM32L053R8 executa <em>firmware</em> bare-metal, consulta ambos os
-                sensores a cada dois segundos e envia as leituras por RS-485 —
+                sensores a cada minuto e envia as leituras por RS-485 —
                 imune a ruído em cabos de grande comprimento.
               </p>
               <ul className="spec-list">
@@ -160,7 +160,7 @@ export default function EstacaoPage() {
                 </li>
                 <li>
                   <span className="k">Amostragem</span>
-                  <span className="v">a cada 2 s</span>
+                  <span className="v">a cada minuto</span>
                 </li>
               </ul>
             </div>
@@ -203,7 +203,7 @@ export default function EstacaoPage() {
             <h3>Do rio à nuvem</h3>
             <p>
               O AquaNode, submerso, consulta os sensores de turbidez e
-              temperatura a cada dois segundos e envia as leituras por RS-485 até
+              temperatura a cada minuto e envia as leituras por RS-485 até
               à caixa. Aí, o ESP32 sai do modo de hibernação a cada cinco
               minutos, lê os dados mais recentes, ativa o módulo NB-IoT e
               transmite-os para o nosso servidor — voltando de imediato a
@@ -223,6 +223,37 @@ export default function EstacaoPage() {
               estação pode transmitir em locais onde exista cobertura NB-IoT
               adequada.
             </p>
+          </div>
+
+          <div className="photo-row" style={{ marginTop: 52 }}>
+            <PhotoFrame
+              src="/estacao/campo/granja-4.jpg"
+              alt="Estação Guarda-Rios a transmitir dados junto à Ribeira da Granja"
+              caption="no terreno"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/estacao/campo/granja-2.jpg"
+              alt="Recolha de amostras na Ribeira da Granja"
+              caption="amostragem"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/estacao/campo/granja-3.jpg"
+              alt="Trabalho de campo na Ribeira da Granja"
+              caption="Ribeira da Granja"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/estacao/campo/granja-6.jpg"
+              alt="Equipa do Guarda-Rios em ensaios no terreno"
+              caption="ensaios"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
           </div>
 
           <div style={{ marginTop: 40, maxWidth: "72ch" }}>

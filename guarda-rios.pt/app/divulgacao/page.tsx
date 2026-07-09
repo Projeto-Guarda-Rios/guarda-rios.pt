@@ -135,6 +135,18 @@ export default function DivulgacaoPage() {
               { src: "/divulgacao/hackathon-2026/hackathon-2026-3.jpg", alt: "Trabalho no Hackathon de IA 2026" },
             ]}
           />
+
+          <EventCard
+            title="Laboratório da Paisagem"
+            year="2025"
+            description="Estivemos no Laboratório da Paisagem, em Guimarães, para conhecer de perto o seu trabalho de investigação ambiental e monitorização ecológica, e para alinhar a colaboração na validação e interpretação dos dados recolhidos pelas nossas estações."
+            photos={[
+              { src: "/divulgacao/laboratorio-paisagem/lab-paisagem-1.jpg", alt: "Visita ao Laboratório da Paisagem, em Guimarães", caption: "Lab. da Paisagem" },
+              { src: "/divulgacao/laboratorio-paisagem/lab-paisagem-2.jpg", alt: "Sessão de trabalho no Laboratório da Paisagem" },
+              { src: "/divulgacao/laboratorio-paisagem/lab-paisagem-3.jpg", alt: "Equipa do Guarda-Rios no Laboratório da Paisagem" },
+              { src: "/divulgacao/laboratorio-paisagem/lab-paisagem-4.jpg", alt: "Apresentação no Laboratório da Paisagem" },
+            ]}
+          />
         </div>
       </section>
 
