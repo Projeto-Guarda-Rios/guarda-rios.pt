@@ -67,9 +67,11 @@ export default function DivulgacaoPage() {
             title="GreenFest · Universidade do Minho"
             year="2024"
             description="Levámos a nossa engenharia ao ecossistema universitário. Com uma demonstração ao vivo da recolha de parâmetros físico-químicos e biológicos da água, mostrámos de forma prática a estudantes, investigadores e ao público em geral, como o Guarda-Rios aplica tecnologia open-source na monitorização real e rigorosa dos ecossistemas aquáticos."
-            wide
             photos={[
-              { src: "/divulgacao/greenfest-uminho-2024/greenfest-uminho-1.jpg", alt: "Equipa do Projeto Guarda-Rios a apresentar no GreenFest Braga, Universidade do Minho, 2024", caption: "GreenFest Braga" },
+              { src: "/divulgacao/greenfest-uminho-2024/greenfest-uminho-1.jpg", alt: "Equipa do Projeto Guarda-Rios a apresentar no GreenFest, Universidade do Minho, 2024", caption: "Universidade do Minho" },
+              { src: "/divulgacao/greenfest-uminho-2024/uminho-2.jpg", alt: "Demonstração do Guarda-Rios no GreenFest da Universidade do Minho" },
+              { src: "/divulgacao/greenfest-uminho-2024/uminho-3.jpg", alt: "Público no stand do Guarda-Rios na Universidade do Minho" },
+              { src: "/divulgacao/greenfest-uminho-2024/uminho-4.jpg", alt: "Equipa do Guarda-Rios na Universidade do Minho" },
             ]}
           />
 
@@ -109,6 +111,30 @@ export default function DivulgacaoPage() {
               { src: "/divulgacao/greenfest-2025/greenfest-4.jpg", alt: "Público no stand do GreenFest 2025" },
             ]}
           />
+
+          <EventCard
+            title="Mostra do 9.º ano · Colégio Ribadouro"
+            year="2026"
+            description="Participámos em mais uma edição da Mostra de Orientação Escolar dos alunos do 9.º ano. Partilhámos o projeto Guarda-Rios e o potencial do trabalho interdisciplinar do nosso laboratório, servindo de plataforma de mentoria entre pares que inspira as novas gerações a seguir percursos ligados à ciência e à tecnologia aplicada à sustentabilidade."
+            photos={[
+              { src: "/divulgacao/mostra-9-2026/mostra-9-2026-1.jpg", alt: "Alunos com o kit Guarda-Rios na Mostra do 9.º ano 2026", caption: "Mostra 9.º ano" },
+              { src: "/divulgacao/mostra-9-2026/mostra-9-2026-2.jpg", alt: "Apresentação na Mostra do 9.º ano 2026" },
+              { src: "/divulgacao/mostra-9-2026/mostra-9-2026-3.jpg", alt: "Conversa com visitantes na Mostra do 9.º ano 2026" },
+              { src: "/divulgacao/mostra-9-2026/mostra-9-2026-5.jpg", alt: "Equipa na Mostra do 9.º ano 2026" },
+            ]}
+          />
+
+          <EventCard
+            title="Hackathon · Inteligência Artificial em Ação"
+            year="2026"
+            description="O RibaLab promoveu o Hackathon «Inteligência Artificial em Ação», um espaço de cocriação e aprendizagem acelerada onde os estudantes usaram ferramentas de IA para analisar dados, otimizar sistemas e desenhar protótipos de alto impacto. Os alunos do Projeto Guarda-Rios participaram como mentores, partilhando o seu trabalho no Ribalab com os colégios do Grupo Ribadouro."
+            photos={[
+              { src: "/divulgacao/hackathon-2026/hackathon-2026-4.jpg", alt: "Hackathon Inteligência Artificial em Ação 2026", caption: "Hackathon IA" },
+              { src: "/divulgacao/hackathon-2026/hackathon-2026-1.jpg", alt: "Equipas no Hackathon de IA 2026" },
+              { src: "/divulgacao/hackathon-2026/hackathon-2026-2.jpg", alt: "Sessão do Hackathon de IA 2026" },
+              { src: "/divulgacao/hackathon-2026/hackathon-2026-3.jpg", alt: "Trabalho no Hackathon de IA 2026" },
+            ]}
+          />
         </div>
       </section>
 
@@ -144,9 +170,9 @@ export default function DivulgacaoPage() {
 
             <article className="mini-card">
               <PhotoFrame
-                src="/instagram/extracted/11-2025-05-08.jpg"
-                alt="Sessão de demonstração do Projeto Guarda-Rios com hardware e apresentação"
-                caption="demonstração"
+                src="/divulgacao/encontro/encontro-1.jpg"
+                alt="Banca do Projeto Guarda-Rios no Encontro Guarda-Rios, com o mural do guarda-rios"
+                caption="encontro"
                 ratio="1/1"
               />
               <div>

@@ -77,7 +77,7 @@ const ENTRIES: Entry[] = [
     title: "Quem caminha connosco",
     teaser:
       "Instituições que apoiam e orientam o projeto, envolvendo empresas municipais, centros de investigação e investigadores de instituições de ensino superior.",
-    photo: "/ribalab/ribalab-team-guarda-rios.jpg",
+    photo: "/parcerias/ceiia/ceiia-4.jpg",
     focal: "center",
     zoom: 100,
   },

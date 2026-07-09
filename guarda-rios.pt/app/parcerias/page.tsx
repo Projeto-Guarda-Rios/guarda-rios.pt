@@ -112,8 +112,8 @@ export default function ParceriasPage() {
         }
         description="Estamos sempre à procura de novos horizontes para expandir a nossa rede de proteção ambiental. Se representa uma escola, autarquia ou outra instituição que deseja acolher os nossos testes piloto, validar dados científicos ou apoiar o crescimento do projeto, entre em contacto connosco. Vamos, juntos, proteger os nossos rios."
         photo={{
-          src: "/ribalab/ribalab-team-guarda-rios.jpg",
-          alt: "Equipa Guarda Rios no Ribalab",
+          src: "/estacao/campo/granja-1.jpg",
+          alt: "Aluno do Guarda-Rios a recolher dados na Ribeira da Granja",
         }}
         actions={
           <>

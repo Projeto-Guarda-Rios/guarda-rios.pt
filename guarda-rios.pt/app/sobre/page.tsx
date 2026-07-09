@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
-  Eyebrow,  
+  Eyebrow,
+  SectionHeading,
   PhotoFrame,
 } from "@/content/ui";
 
@@ -102,6 +103,51 @@ export default function SobrePage() {
                 Medir para proteger: tecnologia inteligente e ciência cidadã como o primeiro passo para garantir um futuro sustentável.
               </p>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- EQUIPA ---------- */}
+      <section className="section bg-2">
+        <div className="wrap">
+          <SectionHeading
+            eyebrow="Quem somos"
+            title={
+              <>
+                A <em>equipa</em>
+              </>
+            }
+            lead="O Guarda-Rios é desenvolvido por alunos do Grupo Ribadouro, com o apoio de professores e de especialistas de diferentes áreas — do desenho e da eletrónica à programação, à ciência ambiental e ao trabalho de campo."
+          />
+          <div className="photo-row" style={{ marginTop: 8 }}>
+            <PhotoFrame
+              src="/equipa/equipa-1.jpg"
+              alt="Aluno do Guarda-Rios a soldar eletrónica no Ribalab"
+              caption="no Ribalab"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/estacao/campo/granja-5.jpg"
+              alt="Equipa do Guarda-Rios no terreno, na Ribeira da Granja"
+              caption="no terreno"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/equipa/equipa-2.jpg"
+              alt="Trabalho de eletrónica na bancada do Ribalab"
+              caption="bancada"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
+            <PhotoFrame
+              src="/estacao/campo/granja-7.jpg"
+              alt="Equipa do Projeto Guarda-Rios"
+              caption="a equipa"
+              ratio="4/3"
+              sizes="(max-width: 720px) 50vw, 25vw"
+            />
           </div>
         </div>
       </section>
