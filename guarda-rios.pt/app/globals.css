@@ -735,6 +735,12 @@ em {
   position: relative;
   padding: 92px 0 20px;
 }
+/* A section directly after a page-hero (pages without a wave divider, e.g.
+   Divulgação / Concursos / Estação) sits closer to the title — otherwise the
+   hero's bottom padding + the section's top padding leave a big empty gap. */
+.page-hero + .section {
+  padding-top: 44px;
+}
 .page-hero h1 {
   font-size: clamp(40px, 5.4vw, 74px);
   line-height: 1.02;
