@@ -81,7 +81,7 @@ export default function DivulgacaoPage() {
             description="Apresentámos o Projeto Guarda-Rios à comunidade escolar do Colégio Ribadouro, com demonstração do protótipo e conversa direta com visitantes."
             photos={[
               {
-                src: "/divulgacao/mostra-9/Mostra 2 9.º ano 2024_2025.jpg",
+                src: "/divulgacao/mostra-9/mostra-9-2025-banca.jpg",
                 alt: "Equipa do Projeto Guarda-Rios na Mostra do 9.º ano do Colégio Ribadouro",
                 caption: "Banca do projeto",
               },
@@ -90,7 +90,7 @@ export default function DivulgacaoPage() {
                 alt: "Equipa do Projeto Guarda-Rios na Mostra do 9.º ano do Colégio Ribadouro",
               },
               {
-                src: "/divulgacao/mostra-9/Mostra 3 9.º ano.jpg",
+                src: "/divulgacao/mostra-9/mostra-9-2025-3.jpg",
                 alt: "Equipa do Projeto Guarda-Rios na Mostra do 9.º ano do Colégio Ribadouro",
               },
               {
