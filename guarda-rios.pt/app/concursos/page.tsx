@@ -75,13 +75,23 @@ export default function ConcursosPage() {
             {/* Placeholder path — the PDF will be published later. */}
             <a
               className="btn btn-primary"
-              href="/regulamento.pdf"
+              href="/regulamento.pdf?v=2026-07-11"
               target="_blank"
               rel="noreferrer noopener"
             >
               <DownloadIcon />
               Regulamento
             </a>
+            <p
+              style={{
+                marginTop: 16,
+                fontStyle: "italic",
+                opacity: 0.72,
+                maxWidth: "46ch",
+              }}
+            >
+              Procurámos parceiros para fazer este concurso uma realidade!
+            </p>
           </div>
         </div>
       </section>
